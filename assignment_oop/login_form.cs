@@ -37,7 +37,7 @@ namespace assignment_oop
             try
             {
                 //Create SqlConnection
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
                 SqlCommand cmd = new SqlCommand("Select * from tbl_user where user_name=@username and password=@password", con);
                 cmd.Parameters.AddWithValue("@username", tb_Username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_Password.Text);
@@ -46,8 +46,7 @@ namespace assignment_oop
                 DataTable db = new DataTable();
                 adapt.Fill(db);
                 con.Close();
-                //int count = ds.Tables[0].Rows.Count;
-                string level = "";
+                string level = "1";
                 if (db != null)
                 {
                     foreach (DataRow dr in db.Rows)
@@ -55,7 +54,6 @@ namespace assignment_oop
                         level = dr["level"].ToString();
                     }
                 }
-                //If count is equal to 1, than show frmMain form
                 if (level == "1")
                 {
                     MessageBox.Show("Login Successful!");

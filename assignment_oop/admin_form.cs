@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.Sql;
+using System.Data.SqlClient;
 namespace assignment_oop
 {
     public partial class admin_form : Form
@@ -26,6 +27,19 @@ namespace assignment_oop
         private void Frame_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Bt_add_Subject_Click(object sender, EventArgs e)
+        {
+            //string query = "SELECT NEXT VALUE FOR tbl_subject.Sequence";
+            //SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\ASUS\\Documents\\db_oop_ass.mdf; Integrated Security = True; Connect Timeout = 30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_subject (subject_name) VALUES (@subject_name)", con);
+            cmd.Parameters.Add("@subject_name", tb_add_Subject.Text);
+            //cmd.Parameters.Add("@id", 11);
+            //cmd.Parameters.Add("@id", query);
+            cmd.ExecuteNonQuery();
         }
     }
 }
