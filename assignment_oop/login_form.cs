@@ -38,7 +38,7 @@ namespace assignment_oop
             {
 
                 //Create SqlConnection
-                if(tb_Username.Text=="admin" && tb_Password.Text=="admin")
+               /* if(tb_Username.Text=="admin" && tb_Password.Text=="admin")
                 {
                     MessageBox.Show("Login Successful!");
                     this.Hide();
@@ -55,8 +55,8 @@ namespace assignment_oop
                 else
                 {
                     MessageBox.Show("Login Failed!");
-                }
-                /*SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
+                }*/
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
                 SqlCommand cmd = new SqlCommand("Select * from tbl_user where user_name=@username and password=@password", con);
                 cmd.Parameters.AddWithValue("@username", tb_Username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_Password.Text);
@@ -90,7 +90,7 @@ namespace assignment_oop
                 else
                 {
                     MessageBox.Show("Login Failed!");
-                }*/
+                }
             }
             catch (Exception ex)
             {

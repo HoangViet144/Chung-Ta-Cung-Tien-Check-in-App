@@ -30,7 +30,7 @@ namespace assignment_oop
                 id = value;
             }
         }
-        public Student(Student curStu)
+        /*public Student(Student curStu)
         {
             id = curStu.id;
             name = curStu.name;
@@ -41,7 +41,7 @@ namespace assignment_oop
         public Student()
         {
             
-        }
+        }*/
         public string Name
         {
             get

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 namespace assignment_oop
 {
 
-    class Excel:I_Db
+    class Excel
     {
-        Classroom asf = new Classroom();
-        asf.
+        
         public void CreateNew()
         {
 
