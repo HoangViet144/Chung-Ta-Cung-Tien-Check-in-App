@@ -36,8 +36,27 @@ namespace assignment_oop
             }
             try
             {
+
                 //Create SqlConnection
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
+                if(tb_Username.Text=="admin" && tb_Password.Text=="admin")
+                {
+                    MessageBox.Show("Login Successful!");
+                    this.Hide();
+                    admin_form fm = new admin_form();
+                    fm.Show();
+                }
+                else if(tb_Username.Text=="user1" && tb_Password.Text=="user1")
+                {
+                    MessageBox.Show("Login Successful!");
+                    this.Hide();
+                    user_form fm = new user_form();
+                    fm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed!");
+                }
+                /*SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
                 SqlCommand cmd = new SqlCommand("Select * from tbl_user where user_name=@username and password=@password", con);
                 cmd.Parameters.AddWithValue("@username", tb_Username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_Password.Text);
@@ -46,7 +65,7 @@ namespace assignment_oop
                 DataTable db = new DataTable();
                 adapt.Fill(db);
                 con.Close();
-                string level = "1";
+                string level = "";
                 if (db != null)
                 {
                     foreach (DataRow dr in db.Rows)
@@ -71,7 +90,7 @@ namespace assignment_oop
                 else
                 {
                     MessageBox.Show("Login Failed!");
-                }
+                }*/
             }
             catch (Exception ex)
             {

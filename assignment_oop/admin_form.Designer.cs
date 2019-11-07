@@ -155,6 +155,7 @@
             this.Name = "admin_form";
             this.Text = "admin_form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frame_FormClosing);
+            this.Load += new System.EventHandler(this.Admin_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
