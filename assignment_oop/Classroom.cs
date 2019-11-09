@@ -7,10 +7,11 @@ using System.Windows.Forms;
 using IronXL;
 namespace assignment_oop
 {
-    class Classroom: I_Db
+    class classRoom: I_Db
     {
         string room_id;
         string subject;
+        string session;
         List<Student> studentList = new List<Student>();
         public void insert(Student item)
         {

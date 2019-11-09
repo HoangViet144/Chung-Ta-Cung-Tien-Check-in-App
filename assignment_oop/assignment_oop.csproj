@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>assignment_oop</RootNamespace>
     <AssemblyName>assignment_oop</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -65,7 +65,9 @@
     <Compile Include="admin_form.Designer.cs">
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classroom.cs" />
+    <Compile Include="classManager.cs" />
+    <Compile Include="classRoom.cs" />
+    <Compile Include="dataManager.cs" />
     <Compile Include="Create_Class_Form.cs">
       <SubType>Form</SubType>
     </Compile>
