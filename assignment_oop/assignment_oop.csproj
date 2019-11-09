@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>assignment_oop</RootNamespace>
     <AssemblyName>assignment_oop</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -65,7 +66,25 @@
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Classroom.cs" />
+    <Compile Include="Create_Class_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_Class_Form.Designer.cs">
+      <DependentUpon>Create_Class_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Excel.cs" />
+    <Compile Include="Find_Student_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Find_Student_form.Designer.cs">
+      <DependentUpon>Find_Student_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Student_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insert_Student_form.Designer.cs">
+      <DependentUpon>Insert_Student_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="IStudent.cs" />
     <Compile Include="I_Db.cs" />
     <Compile Include="login_form.cs">
@@ -85,6 +104,15 @@
     </Compile>
     <EmbeddedResource Include="admin_form.resx">
       <DependentUpon>admin_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create_Class_Form.resx">
+      <DependentUpon>Create_Class_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Find_Student_form.resx">
+      <DependentUpon>Find_Student_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insert_Student_form.resx">
+      <DependentUpon>Insert_Student_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login_form.resx">
       <DependentUpon>login_form.cs</DependentUpon>
