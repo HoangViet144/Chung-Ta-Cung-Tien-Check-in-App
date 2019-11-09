@@ -64,7 +64,9 @@
     <Compile Include="admin_form.Designer.cs">
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classroom.cs" />
+    <Compile Include="classManager.cs" />
+    <Compile Include="classRoom.cs" />
+    <Compile Include="dataManager.cs" />
     <Compile Include="Excel.cs" />
     <Compile Include="IStudent.cs" />
     <Compile Include="I_Db.cs" />

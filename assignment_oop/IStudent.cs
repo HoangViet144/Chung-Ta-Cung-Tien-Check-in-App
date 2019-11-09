@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment_oop
 {
-    interface IStudent
+   interface IStudent
     {
         int Id { get; set; }
         string Name { get; set; }
