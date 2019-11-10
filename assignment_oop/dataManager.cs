@@ -4,18 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 namespace assignment_oop
 {
     //Double Check Locking Singleton
     public sealed class dataManager
     {
+        classRoom clsRm;
         private static int counter = 0;
         private static readonly object Instancelock = new object();
         private dataManager()
         {
-            //do something
+            string data_path = "";
+
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            while (data_path == "")
+            {
+                MessageBox.Show("Please choose where to save your file");
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    data_path = dlg.SelectedPath;
+                }
+                if (data_path != "") MessageBox.Show(data_path);
+            }
             counter++;
-            Console.WriteLine("Counter Value " + counter.ToString());
+            MessageBox.Show(counter.ToString());
+            clsRm = new classRoom();
         }
         private static dataManager instance = null;
 
@@ -40,32 +54,15 @@ namespace assignment_oop
         {
             Console.WriteLine(message);
         }
-       /* public classRoom readFromFile(string session, string subject)
+        public void setClassSection(string subject, string section)
         {
-            string fileName = session + "_" + subject + ".csv";
-            classRoom tmp = new classRoom();
-            //stu
-            //tmp.insert()
-            return tmp;
-        }*/
-        public void writeToFile(string session, string subject,string toWrite)
+            clsRm.Subject = subject;
+            clsRm.Section = section;
+        }
+        public void getClassSection(string subject, string section)
         {
-            string fileName = session + "_" + subject + ".csv";
-            string filePath = "D:\\" + fileName;
-            classRoom tmp = new classRoom();
-            //stu
-            //tmp.insert()
-            var csv = new StringBuilder();
-
-            //in your loop
-            var first = "viet";
-            var second = toWrite;
-            //Suggestion made by KyleMit
-            var newLine = string.Format("{0},{1}", first, second);
-            csv.AppendLine(newLine);
-
-            //after your loop
-            File.WriteAllText(filePath, csv.ToString());
+            subject = clsRm.Subject;
+            section = clsRm.Section;
         }
     }
 }

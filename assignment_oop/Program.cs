@@ -15,23 +15,23 @@ namespace assignment_oop
         [STAThread]
         static void Main()
         {
-            /* Application.EnableVisualStyles();
+             Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
-             Application.Run(new login_form());*/
+             Application.Run(new login_form());
             //classManager test = new classManager();
             //test.writeTest("viet", "dep", "trai qua di");
             //test.writeTest("viet", "dep", "holahola");
-            var csv = new StringBuilder();
+            /*var csv = new StringBuilder();
             string fileName = "viet" + "_" +"dep" + ".csv";
             string filePath = "D:\\" + fileName;
             var first = "viet";
-            var second = "fdasfa fdah";
+            var second = "fdasfa fdah";*/
             //Suggestion made by KyleMit
-            var newLine = string.Format("{0},{1}", first, second);
-            csv.AppendLine(newLine);
+         //   var newLine = string.Format("{0},{1}", first, second);
+           // csv.AppendLine(newLine);
 
             //after your loop
-            File.WriteAllText(filePath, csv.ToString());
+            //File.WriteAllText(filePath, csv.ToString());
         }
     }
 }

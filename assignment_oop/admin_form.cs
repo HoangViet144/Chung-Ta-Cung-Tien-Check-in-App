@@ -13,6 +13,11 @@ namespace assignment_oop
 {
     public partial class admin_form : Form
     {
+        struct subjectSession
+        {
+            string subject;
+
+        }
         public admin_form()
         {
             InitializeComponent();
@@ -28,7 +33,7 @@ namespace assignment_oop
         {
             Application.Exit();
         }
-        private DataTable GetData(string sql)
+     /*   private DataTable GetData(string sql)
         {
             string constr = @"Data Source=.\SQL2017;Initial Catalog=Cascading_ddl;Integrated Security=true";
             using (SqlConnection con = new SqlConnection(constr))
@@ -65,7 +70,7 @@ namespace assignment_oop
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }*/
 
         private void Admin_form_Load(object sender, EventArgs e)
         {
@@ -74,6 +79,14 @@ namespace assignment_oop
             cbCountries.ValueMember = "CountryId";
             cbStates.Enabled = false;
             cbCities.Enabled = false;*/
+        }
+
+        private void btnCreateClass_Click(object sender, EventArgs e)
+        {
+            //classManager clsMng = new classManager();
+            dataManager dataMng = dataManager.GetInstance;
+            Create_Class_Form cls = new Create_Class_Form();
+            cls.Show();
         }
     }
 }

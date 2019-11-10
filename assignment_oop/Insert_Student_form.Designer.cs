@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbClassName = new System.Windows.Forms.ListBox();
-            this.lbSession = new System.Windows.Forms.ListBox();
+            this.lbSection = new System.Windows.Forms.ListBox();
             this.lbDate = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,9 +59,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(184, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Session:";
+            this.label2.Text = "Section:";
             // 
             // label3
             // 
@@ -80,13 +80,13 @@
             this.lbClassName.Size = new System.Drawing.Size(97, 17);
             this.lbClassName.TabIndex = 3;
             // 
-            // lbSession
+            // lbSection
             // 
-            this.lbSession.FormattingEnabled = true;
-            this.lbSession.Location = new System.Drawing.Point(226, 21);
-            this.lbSession.Name = "lbSession";
-            this.lbSession.Size = new System.Drawing.Size(97, 17);
-            this.lbSession.TabIndex = 4;
+            this.lbSection.FormattingEnabled = true;
+            this.lbSection.Location = new System.Drawing.Point(226, 21);
+            this.lbSection.Name = "lbSection";
+            this.lbSection.Size = new System.Drawing.Size(97, 17);
+            this.lbSection.TabIndex = 4;
             // 
             // lbDate
             // 
@@ -169,7 +169,7 @@
             this.txtStudentFaculty.Size = new System.Drawing.Size(195, 20);
             this.txtStudentFaculty.TabIndex = 15;
             // 
-            // Insert_Student
+            // Insert_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,12 +184,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbDate);
-            this.Controls.Add(this.lbSession);
+            this.Controls.Add(this.lbSection);
             this.Controls.Add(this.lbClassName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Insert_Student";
+            this.Name = "Insert_Student_form";
             this.Text = "Insert_Student";
             this.Load += new System.EventHandler(this.Insert_Student_Load);
             this.ResumeLayout(false);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lbClassName;
-        private System.Windows.Forms.ListBox lbSession;
+        private System.Windows.Forms.ListBox lbSection;
         private System.Windows.Forms.ListBox lbDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

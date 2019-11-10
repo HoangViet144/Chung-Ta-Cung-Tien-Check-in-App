@@ -30,8 +30,8 @@
         {
             this.bt_Logout = new System.Windows.Forms.Button();
             this.btnCreateClass = new System.Windows.Forms.Button();
-            this.btnFindStudent = new System.Windows.Forms.Button();
-            this.btnModifyStudent = new System.Windows.Forms.Button();
+            this.dosth = new System.Windows.Forms.Button();
+            this.btnImportClass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Logout
@@ -46,38 +46,39 @@
             // 
             // btnCreateClass
             // 
-            this.btnCreateClass.Location = new System.Drawing.Point(39, 90);
+            this.btnCreateClass.Location = new System.Drawing.Point(32, 44);
             this.btnCreateClass.Name = "btnCreateClass";
             this.btnCreateClass.Size = new System.Drawing.Size(118, 45);
             this.btnCreateClass.TabIndex = 1;
             this.btnCreateClass.Text = "Create Class";
             this.btnCreateClass.UseVisualStyleBackColor = true;
+            this.btnCreateClass.Click += new System.EventHandler(this.btnCreateClass_Click);
             // 
-            // btnFindStudent
+            // dosth
             // 
-            this.btnFindStudent.Location = new System.Drawing.Point(229, 90);
-            this.btnFindStudent.Name = "btnFindStudent";
-            this.btnFindStudent.Size = new System.Drawing.Size(118, 45);
-            this.btnFindStudent.TabIndex = 2;
-            this.btnFindStudent.Text = "Find Student";
-            this.btnFindStudent.UseVisualStyleBackColor = true;
+            this.dosth.Location = new System.Drawing.Point(260, 44);
+            this.dosth.Name = "dosth";
+            this.dosth.Size = new System.Drawing.Size(118, 45);
+            this.dosth.TabIndex = 2;
+            this.dosth.Text = "not defined";
+            this.dosth.UseVisualStyleBackColor = true;
             // 
-            // btnModifyStudent
+            // btnImportClass
             // 
-            this.btnModifyStudent.Location = new System.Drawing.Point(422, 90);
-            this.btnModifyStudent.Name = "btnModifyStudent";
-            this.btnModifyStudent.Size = new System.Drawing.Size(118, 45);
-            this.btnModifyStudent.TabIndex = 3;
-            this.btnModifyStudent.Text = "Modify Student";
-            this.btnModifyStudent.UseVisualStyleBackColor = true;
+            this.btnImportClass.Location = new System.Drawing.Point(478, 44);
+            this.btnImportClass.Name = "btnImportClass";
+            this.btnImportClass.Size = new System.Drawing.Size(118, 45);
+            this.btnImportClass.TabIndex = 3;
+            this.btnImportClass.Text = "Import Class";
+            this.btnImportClass.UseVisualStyleBackColor = true;
             // 
             // admin_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 255);
-            this.Controls.Add(this.btnModifyStudent);
-            this.Controls.Add(this.btnFindStudent);
+            this.Controls.Add(this.btnImportClass);
+            this.Controls.Add(this.dosth);
             this.Controls.Add(this.btnCreateClass);
             this.Controls.Add(this.bt_Logout);
             this.Name = "admin_form";
@@ -92,7 +93,7 @@
 
         private System.Windows.Forms.Button bt_Logout;
         private System.Windows.Forms.Button btnCreateClass;
-        private System.Windows.Forms.Button btnFindStudent;
-        private System.Windows.Forms.Button btnModifyStudent;
+        private System.Windows.Forms.Button dosth;
+        private System.Windows.Forms.Button btnImportClass;
     }
 }

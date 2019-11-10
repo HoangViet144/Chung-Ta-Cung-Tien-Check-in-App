@@ -12,6 +12,7 @@ namespace assignment_oop
 {
     public partial class Insert_Student_form : Form
     {
+        dataManager dataMng = dataManager.GetInstance;
         public Insert_Student_form()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace assignment_oop
 
         private void Insert_Student_Load(object sender, EventArgs e)
         {
-
+            dataMng.getClassSection(lbClassName.Text, lbSection.Text);
         }
     }
 }

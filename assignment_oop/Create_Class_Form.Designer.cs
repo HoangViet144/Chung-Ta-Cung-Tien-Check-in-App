@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbSubject = new System.Windows.Forms.ComboBox();
+            this.cbSection = new System.Windows.Forms.ComboBox();
             this.datClassDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCreateAndInsert = new System.Windows.Forms.Button();
@@ -55,39 +55,37 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Choose Section";
             // 
-            // comboBox1
+            // cbSubject
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "VL1",
-            "VL2",
-            "GT1",
-            "GT2",
-            "HDC",
-            "DSTT"});
-            this.comboBox1.Location = new System.Drawing.Point(122, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbSubject.FormattingEnabled = true;
+            this.cbSubject.Items.AddRange(new object[] {
+            "GT",
+            "VL",
+            "ĐSTT",
+            "HĐC"});
+            this.cbSubject.Location = new System.Drawing.Point(122, 33);
+            this.cbSubject.Name = "cbSubject";
+            this.cbSubject.Size = new System.Drawing.Size(189, 21);
+            this.cbSubject.TabIndex = 2;
             // 
-            // comboBox2
+            // cbSection
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbSection.FormattingEnabled = true;
+            this.cbSection.Items.AddRange(new object[] {
             "Sat. Morning",
             "Sat. Evening",
             "Sun. Morning",
             "Sun. Evening"});
-            this.comboBox2.Location = new System.Drawing.Point(122, 79);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(137, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cbSection.Location = new System.Drawing.Point(122, 79);
+            this.cbSection.Name = "cbSection";
+            this.cbSection.Size = new System.Drawing.Size(189, 21);
+            this.cbSection.TabIndex = 3;
             // 
             // datClassDate
             // 
             this.datClassDate.Location = new System.Drawing.Point(122, 125);
             this.datClassDate.Name = "datClassDate";
-            this.datClassDate.Size = new System.Drawing.Size(137, 20);
+            this.datClassDate.Size = new System.Drawing.Size(189, 20);
             this.datClassDate.TabIndex = 4;
             // 
             // label3
@@ -108,6 +106,7 @@
             this.btnCreateAndInsert.Text = "Create and Insert Student";
             this.btnCreateAndInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAndInsert.UseVisualStyleBackColor = true;
+            this.btnCreateAndInsert.Click += new System.EventHandler(this.btnCreateAndInsert_Click);
             // 
             // Create_Class_Form
             // 
@@ -117,12 +116,13 @@
             this.Controls.Add(this.btnCreateAndInsert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.datClassDate);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbSection);
+            this.Controls.Add(this.cbSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Create_Class_Form";
             this.Text = "Create_Class_Form";
+            this.Load += new System.EventHandler(this.Create_Class_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,8 +132,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbSubject;
+        private System.Windows.Forms.ComboBox cbSection;
         private System.Windows.Forms.DateTimePicker datClassDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCreateAndInsert;

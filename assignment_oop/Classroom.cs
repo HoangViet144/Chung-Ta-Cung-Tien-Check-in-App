@@ -11,8 +11,40 @@ namespace assignment_oop
     {
         string room_id;
         string subject;
-        string session;
+        string section;
         List<Student> studentList = new List<Student>();
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+            set
+            {
+                if (value == "")
+                {
+                    MessageBox.Show("Wrong input!");
+                    return;
+                }
+                subject = value;
+            }
+        }
+        public string Section
+        {
+            get
+            {
+                return section;
+            }
+            set
+            {
+                if (value == "")
+                {
+                    MessageBox.Show("Wrong input!");
+                    return;
+                }
+                section = value;
+            }
+        }
         public void insert(Student item)
         {
             studentList.Add(item);
