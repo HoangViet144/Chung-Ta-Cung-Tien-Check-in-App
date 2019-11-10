@@ -80,14 +80,14 @@
             "Sun. Evening"});
             this.comboBox2.Location = new System.Drawing.Point(122, 79);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(134, 21);
+            this.comboBox2.Size = new System.Drawing.Size(137, 21);
             this.comboBox2.TabIndex = 3;
             // 
             // datClassDate
             // 
-            this.datClassDate.Location = new System.Drawing.Point(124, 125);
+            this.datClassDate.Location = new System.Drawing.Point(122, 125);
             this.datClassDate.Name = "datClassDate";
-            this.datClassDate.Size = new System.Drawing.Size(134, 20);
+            this.datClassDate.Size = new System.Drawing.Size(137, 20);
             this.datClassDate.TabIndex = 4;
             // 
             // label3
