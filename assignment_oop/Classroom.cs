@@ -9,7 +9,7 @@ namespace assignment_oop
 {
     class classRoom: I_Db
     {
-        string room_id;
+        string date;
         string subject;
         string section;
         List<Student> studentList = new List<Student>();
@@ -43,6 +43,22 @@ namespace assignment_oop
                     return;
                 }
                 section = value;
+            }
+        }
+        public string Date
+        {
+            get
+            {
+                return date;
+            }
+            set
+            {
+                if (value == "")
+                {
+                    MessageBox.Show("Wrong input!");
+                    return;
+                }
+                date = value;
             }
         }
         public void insert(Student item)
@@ -114,7 +130,7 @@ namespace assignment_oop
                 sheet["E" + cur].Value = studentList[i].Faculty;
                 sheet["F" + cur].Value = studentList[i].PhoneNumber;
             }
-            workbook.SaveAs(room_id + subject + ".xlsx");
+            workbook.SaveAs( subject+section + date +".xlsx");
         }
         private void Update1(IStudent student, IStudent stuNeedUpdate)
         {

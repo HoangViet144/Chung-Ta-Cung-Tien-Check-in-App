@@ -26,7 +26,7 @@ namespace assignment_oop
             }
             this.Close();
             dataManager dataMng = dataManager.GetInstance;
-            dataMng.setClassSection(cbSubject.Text, cbSection.Text);
+            dataMng.setClassSectionDate(cbSubject.SelectedItem.ToString(), cbSection.SelectedItem.ToString(),datClassDate.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture));
             Insert_Student_form inStufm = new Insert_Student_form();
             inStufm.Show();
         }

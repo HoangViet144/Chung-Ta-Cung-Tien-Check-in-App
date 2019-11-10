@@ -83,7 +83,6 @@ namespace assignment_oop
 
         private void btnCreateClass_Click(object sender, EventArgs e)
         {
-            //classManager clsMng = new classManager();
             dataManager dataMng = dataManager.GetInstance;
             Create_Class_Form cls = new Create_Class_Form();
             cls.Show();

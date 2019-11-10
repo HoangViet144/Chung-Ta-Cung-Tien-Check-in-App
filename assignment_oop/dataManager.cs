@@ -54,15 +54,17 @@ namespace assignment_oop
         {
             Console.WriteLine(message);
         }
-        public void setClassSection(string subject, string section)
+        public void setClassSectionDate(string subject, string section,string date)
         {
             clsRm.Subject = subject;
             clsRm.Section = section;
+            clsRm.Date = date;
         }
-        public void getClassSection(string subject, string section)
+        public void getClassSectionDate(ref string subject, ref string section,ref string date)
         {
             subject = clsRm.Subject;
             section = clsRm.Section;
+            date = clsRm.Date;
         }
     }
 }

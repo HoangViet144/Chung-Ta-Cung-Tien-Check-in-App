@@ -20,7 +20,11 @@ namespace assignment_oop
 
         private void Insert_Student_Load(object sender, EventArgs e)
         {
-            dataMng.getClassSection(lbClassName.Text, lbSection.Text);
+            string a = "", b = "", c = "";
+            dataMng.getClassSectionDate(ref a, ref b,ref c);
+            tbSubject.Text = a;
+            tbSection.Text = b;
+            tbDate.Text = c;
         }
     }
 }
