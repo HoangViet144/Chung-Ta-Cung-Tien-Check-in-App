@@ -88,7 +88,7 @@
       <DependentUpon>Insert_Student_form.cs</DependentUpon>
     </Compile>
     <Compile Include="IStudent.cs" />
-    <Compile Include="I_Db.cs" />
+    <Compile Include="IclassRoom.cs" />
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>

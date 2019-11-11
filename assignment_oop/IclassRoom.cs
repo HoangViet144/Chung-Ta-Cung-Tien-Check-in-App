@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment_oop
 {
-    interface I_Db
+    interface IclassRoom
     {
         void insert(Student item);
         void update(IStudent item);

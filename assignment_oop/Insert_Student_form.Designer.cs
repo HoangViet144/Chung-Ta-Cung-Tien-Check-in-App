@@ -45,6 +45,8 @@
             this.tbDate = new System.Windows.Forms.TextBox();
             this.lbStudent = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -112,12 +114,13 @@
             // 
             // btnInsertStudent
             // 
-            this.btnInsertStudent.Location = new System.Drawing.Point(111, 201);
+            this.btnInsertStudent.Location = new System.Drawing.Point(111, 225);
             this.btnInsertStudent.Name = "btnInsertStudent";
             this.btnInsertStudent.Size = new System.Drawing.Size(121, 35);
             this.btnInsertStudent.TabIndex = 11;
             this.btnInsertStudent.Text = "Insert";
             this.btnInsertStudent.UseVisualStyleBackColor = true;
+            this.btnInsertStudent.Click += new System.EventHandler(this.btnInsertStudent_Click);
             // 
             // txtStudentName
             // 
@@ -188,11 +191,29 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "List Of Students";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Phone number";
+            // 
+            // txtPhonenumber
+            // 
+            this.txtPhonenumber.Location = new System.Drawing.Point(111, 186);
+            this.txtPhonenumber.Name = "txtPhonenumber";
+            this.txtPhonenumber.Size = new System.Drawing.Size(195, 20);
+            this.txtPhonenumber.TabIndex = 22;
+            // 
             // Insert_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 272);
+            this.Controls.Add(this.txtPhonenumber);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbStudent);
             this.Controls.Add(this.tbDate);
@@ -237,5 +258,7 @@
         private System.Windows.Forms.TextBox tbDate;
         private System.Windows.Forms.ListBox lbStudent;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPhonenumber;
     }
 }

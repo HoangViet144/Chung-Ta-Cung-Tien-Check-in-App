@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using IronXL;
 namespace assignment_oop
 {
-    class classRoom: I_Db
+    class classRoom
     {
         string date;
         string subject;
@@ -61,11 +61,19 @@ namespace assignment_oop
                 date = value;
             }
         }
+        public List<Student> StudentList
+        {
+            get
+            {
+                return studentList;
+            }
+
+        }
         public void insert(Student item)
         {
             studentList.Add(item);
         }
-        public void update(IStudent student)
+        public void update(Student student)
         {
             /*for(int i=0; i < studentList.Count; i++)
             {
@@ -76,7 +84,7 @@ namespace assignment_oop
             {
                 if(student.Id==id)
             }*/
-            IStudent curStudent = studentList.Find(x => (x.Id == student.Id));
+            Student curStudent = studentList.Find(x => (x.Id == student.Id));
             if(curStudent==null)
             {
                 MessageBox.Show("Can't find student");
@@ -89,9 +97,9 @@ namespace assignment_oop
                 Name = "1122"
             };*/
         }
-        public IStudent search(int stuId)
+        public Student search(string stuId)
         {
-            IStudent curStudent = studentList.Find(x => (x.Id == stuId));
+            Student curStudent = studentList.Find(x => (x.Id == stuId));
             if (curStudent == null)
             {
                 MessageBox.Show("Can't find student");
@@ -99,7 +107,7 @@ namespace assignment_oop
             }
             return curStudent;
         }
-        public void delete(int stuId)
+        public void delete(string stuId)
         {
             Student curStudent = studentList.Find(x => (x.Id == stuId));
             if (curStudent == null)
@@ -132,7 +140,8 @@ namespace assignment_oop
             }
             workbook.SaveAs( subject+section + date +".xlsx");
         }
-        private void Update1(IStudent student, IStudent stuNeedUpdate)
+        
+        private void Update1(Student student, Student stuNeedUpdate)
         {
             student.Name = stuNeedUpdate.Name;
             student.Id = stuNeedUpdate.Id;

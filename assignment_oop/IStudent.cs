@@ -12,6 +12,6 @@ namespace assignment_oop
         string Name { get; set; }
         string PhoneNumber { get; set; }
         string Mail { get; set; }
-        faculty Faculty { get; set; }
+        string Faculty { get; set; }
     }
 }

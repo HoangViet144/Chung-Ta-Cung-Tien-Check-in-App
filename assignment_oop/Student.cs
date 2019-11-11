@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace assignment_oop
 {
-    enum faculty { KHKTMT, QLCN, CK, DK, DDT, KTGT, KTHH, MTTN, KHUD, CNVL, KTXD };
-    class Student : IStudent
+   // public enum faculty { KHKTMT, QLCN, CK, DK, DDT, KTGT, KTHH, MTTN, KHUD, CNVL, KTXD };
+    public class Student
     {
-        int id;
+        string id;
         string name;
         string phoneNumber;
         string mail;
-        faculty faculty;
-        public int Id
+        bool isStudent = true;
+        string faculty;
+        public string Id
         {
             get
             {
@@ -22,26 +23,44 @@ namespace assignment_oop
             }
             set
             {
-                if (value <= 0 || value >= 2000000)
+                if (value=="" || value.Length!=7)
                 {
-                    MessageBox.Show("Wrong id!");
+                    isStudent = false;
+                    //MessageBox.Show("Wrong id!");
                     return;
+                }
+                for(int i=0;i<7;++i)
+                {
+                    if(value[i]<'0' || value[i]>'9')
+                    {
+                        isStudent = false;
+                        //MessageBox.Show("Wrong id!");
+                        return;
+                    }
                 }
                 id = value;
             }
         }
-        /*public Student(Student curStu)
+        public Student(Student curStu)
         {
-            id = curStu.id;
-            name = curStu.name;
-            phoneNumber = curStu.phoneNumber;
-            mail = curStu.mail;
-            faculty = curStu.faculty;
+            Id = curStu.id;
+            Name = curStu.name;
+            PhoneNumber = curStu.phoneNumber;
+            Mail = curStu.mail;
+            Faculty = curStu.faculty;
+        }
+        public Student(string id, string name,string phone, string mail, string fal)
+        {
+            Id = id;
+            Name = name;
+            PhoneNumber = phone;
+            Mail = mail;
+            Faculty = fal;
         }
         public Student()
         {
             
-        }*/
+        }
         public string Name
         {
             get
@@ -52,7 +71,8 @@ namespace assignment_oop
             {
                 if (value == "")
                 {
-                    MessageBox.Show("Wrong input!");
+                    isStudent = false;
+                    //MessageBox.Show("Wrong input!");
                     return;
                 }
                 name = value;
@@ -68,14 +88,16 @@ namespace assignment_oop
             {
                 if (value =="" ||value.Length!=10 )
                 {
-                    MessageBox.Show("Wrong input!");
+                    isStudent = false;
+                    //MessageBox.Show("Wrong input!");
                     return;
                 }
                 for (int i = 0; i < 10; i++)
                 {
                     if (Char.IsNumber(value[i]) == false)
                     {
-                        MessageBox.Show("Wrong input!");
+                        isStudent = false;
+                        //MessageBox.Show("Wrong input!");
                         return;
                     }
                 }
@@ -90,16 +112,23 @@ namespace assignment_oop
             }
             set
             {
+                if (value.Length < 13)
+                {
+                    isStudent = false;
+                    //MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
+                    return;
+                }
                 string tmp=value.Substring(value.Length-13);
                 if(tmp=="" || tmp!="@hcmut.edu.vn")
                 {
-                    MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
+                    isStudent = false;
+                    //MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
                     return;
                 }
                 mail = value;
             }
         }
-        public faculty Faculty
+        public string Faculty
         {
             get
             {
@@ -107,7 +136,20 @@ namespace assignment_oop
             }
             set
             {
+                if(value=="")
+                {
+                    isStudent = false;
+                    //MessageBox.Show("Wrong input");
+                    return;
+                }
                 faculty = value;
+            }
+        }
+        public bool IsStudent
+        {
+            get
+            {
+                return isStudent;
             }
         }
     }
