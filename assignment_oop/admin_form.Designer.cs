@@ -31,7 +31,7 @@
             this.bt_Logout = new System.Windows.Forms.Button();
             this.btnCreateClass = new System.Windows.Forms.Button();
             this.dosth = new System.Windows.Forms.Button();
-            this.btnImportClass = new System.Windows.Forms.Button();
+            this.btnImportFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Logout
@@ -63,28 +63,28 @@
             this.dosth.Text = "not defined";
             this.dosth.UseVisualStyleBackColor = true;
             // 
-            // btnImportClass
+            // btnImportFile
             // 
-            this.btnImportClass.Location = new System.Drawing.Point(478, 44);
-            this.btnImportClass.Name = "btnImportClass";
-            this.btnImportClass.Size = new System.Drawing.Size(118, 45);
-            this.btnImportClass.TabIndex = 3;
-            this.btnImportClass.Text = "Import Class";
-            this.btnImportClass.UseVisualStyleBackColor = true;
+            this.btnImportFile.Location = new System.Drawing.Point(478, 44);
+            this.btnImportFile.Name = "btnImportFile";
+            this.btnImportFile.Size = new System.Drawing.Size(118, 45);
+            this.btnImportFile.TabIndex = 3;
+            this.btnImportFile.Text = "Import File";
+            this.btnImportFile.UseVisualStyleBackColor = true;
+            this.btnImportFile.Click += new System.EventHandler(this.btnImportClass_Click);
             // 
             // admin_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 255);
-            this.Controls.Add(this.btnImportClass);
+            this.Controls.Add(this.btnImportFile);
             this.Controls.Add(this.dosth);
             this.Controls.Add(this.btnCreateClass);
             this.Controls.Add(this.bt_Logout);
             this.Name = "admin_form";
             this.Text = "admin_form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frame_FormClosing);
-            this.Load += new System.EventHandler(this.Admin_form_Load);
             this.ResumeLayout(false);
 
         }
@@ -94,6 +94,6 @@
         private System.Windows.Forms.Button bt_Logout;
         private System.Windows.Forms.Button btnCreateClass;
         private System.Windows.Forms.Button dosth;
-        private System.Windows.Forms.Button btnImportClass;
+        private System.Windows.Forms.Button btnImportFile;
     }
 }

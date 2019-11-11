@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbSubject = new System.Windows.Forms.ComboBox();
-            this.cbSection = new System.Windows.Forms.ComboBox();
+            this.cbSession = new System.Windows.Forms.ComboBox();
             this.datClassDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCreateAndInsert = new System.Windows.Forms.Button();
@@ -51,35 +51,39 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Choose Section";
+            this.label2.Text = "Choose Session";
             // 
             // cbSubject
             // 
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.Items.AddRange(new object[] {
-            "GT",
-            "VL",
+            "GT1",
+            "GT2",
+            "VL1",
+            "VL2",
             "ĐSTT",
             "HĐC"});
             this.cbSubject.Location = new System.Drawing.Point(122, 33);
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(189, 21);
             this.cbSubject.TabIndex = 2;
+            this.cbSubject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSubject_KeyDown);
             // 
-            // cbSection
+            // cbSession
             // 
-            this.cbSection.FormattingEnabled = true;
-            this.cbSection.Items.AddRange(new object[] {
+            this.cbSession.FormattingEnabled = true;
+            this.cbSession.Items.AddRange(new object[] {
             "Sat. Morning",
             "Sat. Evening",
             "Sun. Morning",
             "Sun. Evening"});
-            this.cbSection.Location = new System.Drawing.Point(122, 79);
-            this.cbSection.Name = "cbSection";
-            this.cbSection.Size = new System.Drawing.Size(189, 21);
-            this.cbSection.TabIndex = 3;
+            this.cbSession.Location = new System.Drawing.Point(122, 79);
+            this.cbSession.Name = "cbSession";
+            this.cbSession.Size = new System.Drawing.Size(189, 21);
+            this.cbSession.TabIndex = 3;
+            this.cbSession.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSession_KeyDown);
             // 
             // datClassDate
             // 
@@ -116,13 +120,12 @@
             this.Controls.Add(this.btnCreateAndInsert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.datClassDate);
-            this.Controls.Add(this.cbSection);
+            this.Controls.Add(this.cbSession);
             this.Controls.Add(this.cbSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Create_Class_Form";
             this.Text = "Create_Class_Form";
-            this.Load += new System.EventHandler(this.Create_Class_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbSubject;
-        private System.Windows.Forms.ComboBox cbSection;
+        private System.Windows.Forms.ComboBox cbSession;
         private System.Windows.Forms.DateTimePicker datClassDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCreateAndInsert;

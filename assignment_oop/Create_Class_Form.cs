@@ -19,24 +19,32 @@ namespace assignment_oop
 
         private void btnCreateAndInsert_Click(object sender, EventArgs e)
         {
-            if(cbSubject.Text==""||cbSection.Text=="")
+            if(cbSubject.Text==""||cbSession.Text=="")
             {
                 MessageBox.Show("Please fill all the information");
                 return;
             }
             this.Close();
             dataManager dataMng = dataManager.GetInstance;
-            dataMng.setClassSectionDate(cbSubject.SelectedItem.ToString(), cbSection.SelectedItem.ToString(),datClassDate.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture));
+            dataMng.setClassSessionDate(cbSubject.SelectedItem.ToString(), cbSession.SelectedItem.ToString(),datClassDate.Value.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
             Insert_Student_form inStufm = new Insert_Student_form();
             inStufm.Show();
         }
-        private void Create_Class_Form_Load(object sender, EventArgs e)
+
+        private void cbSubject_KeyDown(object sender, KeyEventArgs e)
         {
-            /*cb_Subject.DataSource = this.GetData("SELECT subject_name FROM Countries");
-            cbCountries.DisplayMember = "CountryName";
-            cbCountries.ValueMember = "CountryId";
-            cbStates.Enabled = false;
-            cbCities.Enabled = false;*/
+            if (e.KeyValue == '\r')
+            {
+                cbSession.Focus();
+            }
+        }
+
+        private void cbSession_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == '\r')
+            {
+                datClassDate.Focus();
+            }
         }
     }
 }

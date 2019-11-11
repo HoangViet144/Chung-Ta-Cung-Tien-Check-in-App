@@ -36,8 +36,6 @@ namespace assignment_oop
             }
             try
             {
-
-                //Create SqlConnection
                 if(tb_Username.Text=="admin" && tb_Password.Text=="admin")
                 {
                     MessageBox.Show("Login Successful!");

@@ -17,24 +17,25 @@ namespace assignment_oop
         {
             InitializeComponent();
         }
-        private void updateLbStudent()
+        private void updategridOutput()
         {
-            lbStudent.Items.Clear();
+            gridOutput.Rows.Clear();
             List<Student> stuList = dataMng.getStudentList();
             for (int i = 0; i < stuList.Count; ++i)
             {
-                lbStudent.Items.Add(stuList[i].Id + " | " + stuList[i].Name + " | " + stuList[i].Faculty + " | " + stuList[i].Mail + " | " + stuList[i].PhoneNumber);
+                DataGridViewRow tmp = new DataGridViewRow();
+                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name, stuList[i].Faculty, stuList[i].Mail, stuList[i].PhoneNumber);
             }
         }
 
         private void Insert_Student_Load(object sender, EventArgs e)
         {
             string a = "", b = "", c = "";
-            dataMng.getClassSectionDate(ref a, ref b,ref c);
+            dataMng.getClassSessionDate(ref a, ref b,ref c);
             tbSubject.Text = a;
-            tbSection.Text = b;
+            tbSession.Text = b;
             tbDate.Text = c;
-            updateLbStudent();
+            updategridOutput();
         }
 
         private void btnInsertStudent_Click(object sender, EventArgs e)
@@ -50,7 +51,12 @@ namespace assignment_oop
                 return;
             }
             dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
-            updateLbStudent();
+            updategridOutput();
+        }
+
+        private void btnWrite2File_Click(object sender, EventArgs e)
+        {
+            dataMng.Write2File();
         }
     }
 }

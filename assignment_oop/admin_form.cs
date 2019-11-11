@@ -13,11 +13,6 @@ namespace assignment_oop
 {
     public partial class admin_form : Form
     {
-        struct subjectSession
-        {
-            string subject;
-
-        }
         public admin_form()
         {
             InitializeComponent();
@@ -33,59 +28,28 @@ namespace assignment_oop
         {
             Application.Exit();
         }
-     /*   private DataTable GetData(string sql)
-        {
-            string constr = @"Data Source=.\SQL2017;Initial Catalog=Cascading_ddl;Integrated Security=true";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(sql, con))
-                {
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    DataRow row = dt.NewRow();
-                    row[0] = 0;
-                    row[1] = "Please select";
-                    dt.Rows.InsertAt(row, 0);
-                    return dt;
-                }
-            }
-        }
-        private void Bt_add_Subject_Click(object sender, EventArgs e)
-        {
-            if (tb_add_Subject.Text== "")
-            {
-                MessageBox.Show("Please provide Subject name");
-                return;
-            }
-            try
-            {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\db_oop_ass.mdf;Integrated Security=True;Connect Timeout=30");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_subject (subject_name) VALUES (@subject_name)", con);
-                cmd.Parameters.Add("@subject_name", tb_add_Subject.Text);
-                cmd.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }*/
-
-        private void Admin_form_Load(object sender, EventArgs e)
-        {
-            /*cb_Subject.DataSource = this.GetData("SELECT subject_name FROM Countries");
-            cbCountries.DisplayMember = "CountryName";
-            cbCountries.ValueMember = "CountryId";
-            cbStates.Enabled = false;
-            cbCities.Enabled = false;*/
-        }
-
         private void btnCreateClass_Click(object sender, EventArgs e)
         {
             dataManager dataMng = dataManager.GetInstance;
             Create_Class_Form cls = new Create_Class_Form();
             cls.Show();
+        }
+
+        private void btnImportClass_Click(object sender, EventArgs e)
+        {
+            dataManager dataMng = dataManager.GetInstance;
+            string data_path = "";
+
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            while (data_path == "")
+            {
+                MessageBox.Show("Please choose where to open your file");
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    data_path = dlg.SelectedPath;
+                }
+                if (data_path != "") MessageBox.Show(data_path);
+            }
         }
     }
 }

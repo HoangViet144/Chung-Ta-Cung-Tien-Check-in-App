@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 namespace assignment_oop
 {
     //Double Check Locking Singleton
     public sealed class dataManager
     {
+        string data_path = "";
         string date;
         string subject;
-        string section;
+        string session;
         List<Student> studentList;
         public string Subject
         {
@@ -30,11 +32,11 @@ namespace assignment_oop
                 subject = value;
             }
         }
-        public string Section
+        public string Session
         {
             get
             {
-                return section;
+                return session;
             }
             set
             {
@@ -43,7 +45,7 @@ namespace assignment_oop
                     MessageBox.Show("Wrong input!");
                     return;
                 }
-                section = value;
+                session = value;
             }
         }
         public string Date
@@ -137,8 +139,6 @@ namespace assignment_oop
         private static readonly object Instancelock = new object();
         private dataManager()
         {
-            string data_path = "";
-
             FolderBrowserDialog dlg = new FolderBrowserDialog();
             while (data_path == "")
             {
@@ -172,16 +172,16 @@ namespace assignment_oop
                 return instance;
             }
         }
-        public void setClassSectionDate(string Subject, string Section, string Date)
+        public void setClassSessionDate(string Subject, string Session, string Date)
         {
             subject = Subject;
-            section = Section;
+            session = Session;
             date = Date;
         }
-        public void getClassSectionDate(ref string Subject, ref string Section, ref string Date)
+        public void getClassSessionDate(ref string Subject, ref string Session, ref string Date)
         {
             Subject = subject;
-            Section = section;
+            Session = session;
             Date = date;
         }
 
@@ -190,6 +190,38 @@ namespace assignment_oop
             return studentList;
         }
 
+        public void Write2File()
+        {
+            var excelApp = new Excel.Application();
+            excelApp.Visible = true;
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.Worksheets[1];
+            worksheet.Name = subject+session+date;
+
+            worksheet.Cells[1, "A"] = "ID";
+            worksheet.Cells[1, "B"] = "Name";
+            worksheet.Cells[1, "C"] = "Faculty";
+            worksheet.Cells[1, "D"] = "Email";
+            worksheet.Cells[1, "E"] = "Phone";
+
+            for(int i=0;i<studentList.Count;++i)
+            {
+                worksheet.Cells[i+2, "A"] = studentList[i].Id;
+                worksheet.Cells[i+2, "B"] = studentList[i].Name;
+                worksheet.Cells[i+2, "C"] = studentList[i].Faculty;
+                worksheet.Cells[i+2, "D"] = studentList[i].Mail;
+                worksheet.Cells[i+2, "E"] = studentList[i].PhoneNumber.ToString();
+            }
+            //worksheet = workbook.Worksheets.Add();
+            //worksheet.Name = "B";
+            //worksheet.Cells[1, "A"] = "ID Numberr";
+            worksheet.Columns[1].AutoFit();
+            worksheet.Columns[2].AutoFit();
+            worksheet.Columns[3].AutoFit();
+            worksheet.Columns[4].AutoFit();
+            worksheet.Columns[5].AutoFit();
+            workbook.SaveAs(data_path+"test.xlsx");
+        }
 
         /*
         classRoom clsRm;
