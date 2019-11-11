@@ -65,8 +65,6 @@
     <Compile Include="admin_form.Designer.cs">
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="classManager.cs" />
-    <Compile Include="classRoom.cs" />
     <Compile Include="dataManager.cs" />
     <Compile Include="Create_Class_Form.cs">
       <SubType>Form</SubType>
@@ -74,7 +72,6 @@
     <Compile Include="Create_Class_Form.Designer.cs">
       <DependentUpon>Create_Class_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Excel.cs" />
     <Compile Include="Find_Student_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +84,6 @@
     <Compile Include="Insert_Student_form.Designer.cs">
       <DependentUpon>Insert_Student_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="IStudent.cs" />
-    <Compile Include="IclassRoom.cs" />
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -17,7 +17,7 @@ namespace assignment_oop
         {
              Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
-             Application.Run(new admin_form());
+             Application.Run(new login_form());
             //classManager test = new classManager();
             //test.writeTest("viet", "dep", "trai qua di");
             //test.writeTest("viet", "dep", "holahola");

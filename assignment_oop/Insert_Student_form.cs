@@ -49,7 +49,7 @@ namespace assignment_oop
                 MessageBox.Show("Student is already exist");
                 return;
             }
-            dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtStudentFaculty.Text, txtStudentEmail.Text, txtPhonenumber.Text));
+            dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
             updateLbStudent();
         }
     }
