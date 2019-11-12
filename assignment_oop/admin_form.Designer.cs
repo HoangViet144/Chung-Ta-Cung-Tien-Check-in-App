@@ -30,7 +30,7 @@
         {
             this.bt_Logout = new System.Windows.Forms.Button();
             this.btnCreateClass = new System.Windows.Forms.Button();
-            this.dosth = new System.Windows.Forms.Button();
+            this.btnModifyStu = new System.Windows.Forms.Button();
             this.btnImportFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,14 +54,15 @@
             this.btnCreateClass.UseVisualStyleBackColor = true;
             this.btnCreateClass.Click += new System.EventHandler(this.btnCreateClass_Click);
             // 
-            // dosth
+            // btnModifyStu
             // 
-            this.dosth.Location = new System.Drawing.Point(260, 44);
-            this.dosth.Name = "dosth";
-            this.dosth.Size = new System.Drawing.Size(118, 45);
-            this.dosth.TabIndex = 2;
-            this.dosth.Text = "not defined";
-            this.dosth.UseVisualStyleBackColor = true;
+            this.btnModifyStu.Location = new System.Drawing.Point(260, 44);
+            this.btnModifyStu.Name = "btnModifyStu";
+            this.btnModifyStu.Size = new System.Drawing.Size(118, 45);
+            this.btnModifyStu.TabIndex = 2;
+            this.btnModifyStu.Text = "Modify Student";
+            this.btnModifyStu.UseVisualStyleBackColor = true;
+            this.btnModifyStu.Click += new System.EventHandler(this.btnModifyStu_Click);
             // 
             // btnImportFile
             // 
@@ -79,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 255);
             this.Controls.Add(this.btnImportFile);
-            this.Controls.Add(this.dosth);
+            this.Controls.Add(this.btnModifyStu);
             this.Controls.Add(this.btnCreateClass);
             this.Controls.Add(this.bt_Logout);
             this.Name = "admin_form";
@@ -93,7 +94,7 @@
 
         private System.Windows.Forms.Button bt_Logout;
         private System.Windows.Forms.Button btnCreateClass;
-        private System.Windows.Forms.Button dosth;
+        private System.Windows.Forms.Button btnModifyStu;
         private System.Windows.Forms.Button btnImportFile;
     }
 }

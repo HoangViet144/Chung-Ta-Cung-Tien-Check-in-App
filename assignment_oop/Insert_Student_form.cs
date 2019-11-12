@@ -52,6 +52,11 @@ namespace assignment_oop
             }
             dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
             updategridOutput();
+            txtPhonenumber.Clear();
+            txtStudentEmail.Clear();
+            txtStudentFaculty.Clear();
+            txtStudentID.Clear();
+            txtStudentName.Clear();
         }
 
         private void btnWrite2File_Click(object sender, EventArgs e)

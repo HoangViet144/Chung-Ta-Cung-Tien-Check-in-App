@@ -196,7 +196,7 @@ namespace assignment_oop
             excelApp.Visible = true;
             Excel.Workbook workbook = excelApp.Workbooks.Add();
             Excel.Worksheet worksheet = workbook.Worksheets[1];
-            worksheet.Name = subject+session+date;
+            worksheet.Name = subject+","+session+","+date;
 
             worksheet.Cells[1, "A"] = "ID";
             worksheet.Cells[1, "B"] = "Name";
@@ -220,7 +220,9 @@ namespace assignment_oop
             worksheet.Columns[3].AutoFit();
             worksheet.Columns[4].AutoFit();
             worksheet.Columns[5].AutoFit();
-            workbook.SaveAs(data_path+"test.xlsx");
+            workbook.SaveAs(data_path+"\\test.xlsx");
+            workbook.Close(0);
+            excelApp.Quit();
         }
 
         /*
