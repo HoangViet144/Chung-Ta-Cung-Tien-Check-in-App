@@ -40,13 +40,22 @@ namespace assignment_oop
         {
             dataManager dataMng = dataManager.GetInstance;
             string data_path = "";
-           // OpenFileDialog dlg = new OpenFileDialog();
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            
+            OpenFileDialog dlg = new OpenFileDialog
+            {
+                Title = "Browse Excel File",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "xlsx",
+                Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
+               
+            };
+            // FolderBrowserDialog dlg = new FolderBrowserDialog();
             MessageBox.Show("Please choose where to open your file");
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                data_path = dlg.SelectedPath;
+                data_path = dlg.FileName;
             }
             if (data_path == "")
             {
@@ -54,7 +63,7 @@ namespace assignment_oop
                 return;
             }
             Excel.Application app = new Excel.Application();
-            Excel.Workbook workbookImport = app.Workbooks.Open(data_path+ "\\test.xlsx");
+            Excel.Workbook workbookImport = app.Workbooks.Open(data_path);
             Excel.Worksheet worksheetImport = workbookImport.Sheets[1];
             Excel.Range rangeImport = worksheetImport.UsedRange;
             string nameSheet = worksheetImport.Name;
@@ -71,8 +80,11 @@ namespace assignment_oop
             int row = rangeImport.Rows.Count;
             for(int i=2;i<=row;++i)
             {
-
-                 dataMng.insert(new Student(worksheetImport.Cells[i,1].Text.ToString(), 
+                if(dataMng.search(worksheetImport.Cells[i, 1].Text.ToString())!=null)
+                {
+                    continue;
+                }
+                dataMng.insert(new Student(worksheetImport.Cells[i,1].Text.ToString(), 
                      worksheetImport.Cells[i,2].Text.ToString(),
                      worksheetImport.Cells[i,5].Text.ToString(), 
                      worksheetImport.Cells[i,4].Text.ToString(), 

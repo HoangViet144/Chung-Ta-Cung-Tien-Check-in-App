@@ -86,13 +86,13 @@ namespace assignment_oop
             }
             set
             {
-                if (value =="" ||value.Length!=10 )
+                if (value =="" || value.Length != 10)
                 {
                     isStudent = false;
                     //MessageBox.Show("Wrong input!");
                     return;
                 }
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     if (Char.IsNumber(value[i]) == false)
                     {

@@ -72,14 +72,15 @@ namespace assignment_oop
             }
 
         }
-        public void insert(Student item)
+        public bool insert(Student item)
         {
             if (!item.IsStudent)
             {
                 MessageBox.Show("Wrong information of the student");
-                return;
+                return false;
             }
             studentList.Add(item);
+            return true;
         }
         public void update(Student student)
         {
@@ -203,24 +204,23 @@ namespace assignment_oop
             worksheet.Cells[1, "C"] = "Faculty";
             worksheet.Cells[1, "D"] = "Email";
             worksheet.Cells[1, "E"] = "Phone";
-
-            for(int i=0;i<studentList.Count;++i)
+            int tmp = studentList.Count + 1;
+            worksheet.Range["E2", "E" + tmp].NumberFormat = "@";
+            for (int i=0;i<studentList.Count;++i)
             {
                 worksheet.Cells[i+2, "A"] = studentList[i].Id;
                 worksheet.Cells[i+2, "B"] = studentList[i].Name;
                 worksheet.Cells[i+2, "C"] = studentList[i].Faculty;
                 worksheet.Cells[i+2, "D"] = studentList[i].Mail;
-                worksheet.Cells[i+2, "E"] = studentList[i].PhoneNumber.ToString();
+                worksheet.Cells[i + 2, "E"] = studentList[i].PhoneNumber;
             }
-            //worksheet = workbook.Worksheets.Add();
-            //worksheet.Name = "B";
-            //worksheet.Cells[1, "A"] = "ID Numberr";
+            
             worksheet.Columns[1].AutoFit();
             worksheet.Columns[2].AutoFit();
             worksheet.Columns[3].AutoFit();
             worksheet.Columns[4].AutoFit();
             worksheet.Columns[5].AutoFit();
-            workbook.SaveAs(data_path+"\\test.xlsx");
+            workbook.SaveAs(data_path+"\\testtt.xlsx");
             workbook.Close(0);
             excelApp.Quit();
         }

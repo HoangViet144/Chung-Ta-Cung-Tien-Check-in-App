@@ -47,13 +47,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.gridOutput = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnWrite2File = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 73);
+            this.label5.Location = new System.Drawing.Point(12, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 7;
@@ -96,7 +96,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 99);
+            this.label4.Location = new System.Drawing.Point(12, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 8;
@@ -132,17 +132,19 @@
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(111, 70);
+            this.txtStudentName.Location = new System.Drawing.Point(111, 99);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(157, 20);
-            this.txtStudentName.TabIndex = 12;
+            this.txtStudentName.TabIndex = 13;
+            this.txtStudentName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentName_KeyDown);
             // 
             // txtStudentID
             // 
-            this.txtStudentID.Location = new System.Drawing.Point(111, 99);
+            this.txtStudentID.Location = new System.Drawing.Point(111, 70);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(157, 20);
-            this.txtStudentID.TabIndex = 13;
+            this.txtStudentID.TabIndex = 12;
+            this.txtStudentID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentID_KeyDown);
             // 
             // txtStudentEmail
             // 
@@ -150,6 +152,7 @@
             this.txtStudentEmail.Name = "txtStudentEmail";
             this.txtStudentEmail.Size = new System.Drawing.Size(157, 20);
             this.txtStudentEmail.TabIndex = 14;
+            this.txtStudentEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentEmail_KeyDown);
             // 
             // txtStudentFaculty
             // 
@@ -157,6 +160,7 @@
             this.txtStudentFaculty.Name = "txtStudentFaculty";
             this.txtStudentFaculty.Size = new System.Drawing.Size(157, 20);
             this.txtStudentFaculty.TabIndex = 15;
+            this.txtStudentFaculty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentFaculty_KeyDown);
             // 
             // tbSubject
             // 
@@ -206,6 +210,7 @@
             this.txtPhonenumber.Name = "txtPhonenumber";
             this.txtPhonenumber.Size = new System.Drawing.Size(157, 20);
             this.txtPhonenumber.TabIndex = 22;
+            this.txtPhonenumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhonenumber_KeyDown);
             // 
             // gridOutput
             // 
@@ -213,41 +218,13 @@
             this.gridOutput.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NameStudent,
-            this.Faculty,
             this.Email,
+            this.Faculty,
             this.Phonenumber});
             this.gridOutput.Location = new System.Drawing.Point(284, 99);
             this.gridOutput.Name = "gridOutput";
             this.gridOutput.Size = new System.Drawing.Size(568, 150);
             this.gridOutput.TabIndex = 23;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 80;
-            // 
-            // NameStudent
-            // 
-            this.NameStudent.HeaderText = "Name";
-            this.NameStudent.Name = "NameStudent";
-            // 
-            // Faculty
-            // 
-            this.Faculty.HeaderText = "Faculty";
-            this.Faculty.Name = "Faculty";
-            this.Faculty.Width = 50;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email (@hcmut.edu.vn)";
-            this.Email.Name = "Email";
-            this.Email.Width = 200;
-            // 
-            // Phonenumber
-            // 
-            this.Phonenumber.HeaderText = "Phone No.";
-            this.Phonenumber.Name = "Phonenumber";
             // 
             // panel1
             // 
@@ -267,6 +244,34 @@
             this.btnWrite2File.Text = "Write to file";
             this.btnWrite2File.UseVisualStyleBackColor = true;
             this.btnWrite2File.Click += new System.EventHandler(this.btnWrite2File_Click);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 80;
+            // 
+            // NameStudent
+            // 
+            this.NameStudent.HeaderText = "Name";
+            this.NameStudent.Name = "NameStudent";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email (@hcmut.edu.vn)";
+            this.Email.Name = "Email";
+            this.Email.Width = 200;
+            // 
+            // Faculty
+            // 
+            this.Faculty.HeaderText = "Faculty";
+            this.Faculty.Name = "Faculty";
+            this.Faculty.Width = 50;
+            // 
+            // Phonenumber
+            // 
+            this.Phonenumber.HeaderText = "Phone No.";
+            this.Phonenumber.Name = "Phonenumber";
             // 
             // Insert_Student_form
             // 
@@ -325,12 +330,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.DataGridView gridOutput;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnWrite2File;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
     }
 }

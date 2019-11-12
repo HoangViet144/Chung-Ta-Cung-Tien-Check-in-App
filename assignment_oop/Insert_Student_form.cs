@@ -24,7 +24,7 @@ namespace assignment_oop
             for (int i = 0; i < stuList.Count; ++i)
             {
                 DataGridViewRow tmp = new DataGridViewRow();
-                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name, stuList[i].Faculty, stuList[i].Mail, stuList[i].PhoneNumber);
+                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name,  stuList[i].Mail, stuList[i].Faculty, stuList[i].PhoneNumber);
             }
         }
 
@@ -35,6 +35,7 @@ namespace assignment_oop
             tbSubject.Text = a;
             tbSession.Text = b;
             tbDate.Text = c;
+            txtStudentID.Focus();
             updategridOutput();
         }
 
@@ -50,18 +51,62 @@ namespace assignment_oop
                 MessageBox.Show("Student is already exist");
                 return;
             }
-            dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
+            bool check=dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
             updategridOutput();
-            txtPhonenumber.Clear();
-            txtStudentEmail.Clear();
-            txtStudentFaculty.Clear();
-            txtStudentID.Clear();
-            txtStudentName.Clear();
+            if(check)
+            {
+                txtPhonenumber.Clear();
+                txtStudentEmail.Clear();
+                txtStudentFaculty.Clear();
+                txtStudentID.Clear();
+                txtStudentName.Clear();
+                txtStudentID.Focus();
+            }
         }
 
         private void btnWrite2File_Click(object sender, EventArgs e)
         {
             dataMng.Write2File();
+        }
+
+        private void txtStudentName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyValue=='\r')
+            {
+                txtStudentEmail.Focus();
+            }
+        }
+
+        private void txtStudentID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == '\r')
+            {
+                txtStudentName.Focus();
+            }
+        }
+
+        private void txtStudentEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == '\r')
+            {
+                txtStudentFaculty.Focus();
+            }
+        }
+
+        private void txtPhonenumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == '\r')
+            {
+                btnInsertStudent.Focus();
+            }
+        }
+
+        private void txtStudentFaculty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == '\r')
+            {
+                txtPhonenumber.Focus();
+            }
         }
     }
 }

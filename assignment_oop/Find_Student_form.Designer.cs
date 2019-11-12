@@ -48,6 +48,7 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,11 +219,22 @@
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::assignment_oop.Properties.Resources.LogoCTCT;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(667, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(136, 64);
+            this.panel1.TabIndex = 39;
+            // 
             // Find_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(864, 264);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.btnFind);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.Panel panel1;
     }
 }
