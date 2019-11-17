@@ -24,7 +24,7 @@ namespace assignment_oop
             for (int i = 0; i < stuList.Count; ++i)
             {
                 DataGridViewRow tmp = new DataGridViewRow();
-                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name,  stuList[i].Mail, stuList[i].Faculty, stuList[i].PhoneNumber);
+                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name,  stuList[i].Mail, stuList[i].Faculty, stuList[i].PhoneNumber,stuList[i].Present);
             }
         }
 
@@ -51,7 +51,7 @@ namespace assignment_oop
                 MessageBox.Show("Student is already exist");
                 return;
             }
-            bool check=dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
+            bool check=dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text,checkPre.Checked));
             updategridOutput();
             if(check)
             {

@@ -24,7 +24,7 @@ namespace assignment_oop
             for (int i = 0; i < stuList.Count; ++i)
             {
                 DataGridViewRow tmp = new DataGridViewRow();
-                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name, stuList[i].Faculty, stuList[i].Mail, stuList[i].PhoneNumber);
+                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name, stuList[i].Faculty, stuList[i].Mail, stuList[i].PhoneNumber,stuList[i].Present);
             }
         }
         private void btnFind_Click(object sender, EventArgs e)
@@ -39,11 +39,13 @@ namespace assignment_oop
             txtPhonenumber.Text = tmp.PhoneNumber;
             txtStudentEmail.Text = tmp.Mail;
             txtStudentFaculty.Text = tmp.Faculty;
+            checkPre.Checked = tmp.Present;
             txtPhonenumber.Enabled = true;
             txtStudentEmail.Enabled = true;
             txtStudentFaculty.Enabled = true;
             txtStudentID.Enabled = true;
             txtStudentName.Enabled = true;
+            checkPre.Enabled = true;
             txtStudentName.Focus();
         }
 
@@ -54,11 +56,12 @@ namespace assignment_oop
             txtStudentEmail.Enabled = false;
             txtStudentFaculty.Enabled = false;
             txtStudentName.Enabled = false;
+            checkPre.Enabled = false;
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            dataMng.update(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text));
+            dataMng.update(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text,checkPre.Checked));
             txtPhonenumber.Clear();
             txtStudentEmail.Clear();
             txtStudentFaculty.Clear();
@@ -69,6 +72,7 @@ namespace assignment_oop
             txtStudentEmail.Enabled = false;
             txtStudentFaculty.Enabled = false;
             txtStudentName.Enabled = false;
+            checkPre.Enabled = false;
             txtStudentID.Focus();
         }
 
@@ -78,6 +82,7 @@ namespace assignment_oop
             txtStudentEmail.Clear();
             txtStudentFaculty.Clear();
             txtStudentName.Clear();
+            checkPre.Checked = false;
         }
 
         private void txtStudentID_KeyDown(object sender, KeyEventArgs e)
@@ -116,7 +121,7 @@ namespace assignment_oop
         {
             if (e.KeyValue == '\r')
             {
-                btnSaveChanges.Focus();
+                checkPre.Focus();
             }
         }
 

@@ -12,6 +12,7 @@ namespace assignment_oop
 {
     public partial class login_form : Form
     {
+        admin_form fm = new admin_form();
         public login_form()
         {
             InitializeComponent();
@@ -40,14 +41,14 @@ namespace assignment_oop
                 {
                     MessageBox.Show("Login Successful!");
                     this.Hide();
-                    admin_form fm = new admin_form();
+                    
                     fm.Show();
                 }
                 else if(tb_Username.Text=="user1" && tb_Password.Text=="user1")
                 {
                     MessageBox.Show("Login Successful!");
                     this.Hide();
-                    user_form fm = new user_form();
+                    
                     fm.Show();
                 }
                 else

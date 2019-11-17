@@ -34,6 +34,7 @@
             this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,6 +50,8 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkPre = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,10 +63,12 @@
             this.NameStudent,
             this.Faculty,
             this.Email,
-            this.Phonenumber});
+            this.Phonenumber,
+            this.Present});
+            this.gridOutput.Enabled = false;
             this.gridOutput.Location = new System.Drawing.Point(284, 102);
             this.gridOutput.Name = "gridOutput";
-            this.gridOutput.Size = new System.Drawing.Size(568, 150);
+            this.gridOutput.Size = new System.Drawing.Size(624, 150);
             this.gridOutput.TabIndex = 35;
             // 
             // ID
@@ -94,9 +99,17 @@
             this.Phonenumber.HeaderText = "Phone No.";
             this.Phonenumber.Name = "Phonenumber";
             // 
+            // Present
+            // 
+            this.Present.HeaderText = "Present";
+            this.Present.Name = "Present";
+            this.Present.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Present.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Present.Width = 50;
+            // 
             // txtPhonenumber
             // 
-            this.txtPhonenumber.Location = new System.Drawing.Point(111, 189);
+            this.txtPhonenumber.Location = new System.Drawing.Point(111, 170);
             this.txtPhonenumber.Name = "txtPhonenumber";
             this.txtPhonenumber.Size = new System.Drawing.Size(157, 20);
             this.txtPhonenumber.TabIndex = 34;
@@ -105,7 +118,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 192);
+            this.label9.Location = new System.Drawing.Point(12, 173);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 33;
@@ -122,7 +135,7 @@
             // 
             // txtStudentFaculty
             // 
-            this.txtStudentFaculty.Location = new System.Drawing.Point(111, 159);
+            this.txtStudentFaculty.Location = new System.Drawing.Point(111, 144);
             this.txtStudentFaculty.Name = "txtStudentFaculty";
             this.txtStudentFaculty.Size = new System.Drawing.Size(157, 20);
             this.txtStudentFaculty.TabIndex = 31;
@@ -130,7 +143,7 @@
             // 
             // txtStudentEmail
             // 
-            this.txtStudentEmail.Location = new System.Drawing.Point(111, 133);
+            this.txtStudentEmail.Location = new System.Drawing.Point(111, 118);
             this.txtStudentEmail.Name = "txtStudentEmail";
             this.txtStudentEmail.Size = new System.Drawing.Size(157, 20);
             this.txtStudentEmail.TabIndex = 30;
@@ -147,7 +160,7 @@
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(111, 99);
+            this.txtStudentName.Location = new System.Drawing.Point(111, 92);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(157, 20);
             this.txtStudentName.TabIndex = 28;
@@ -156,7 +169,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 161);
+            this.label7.Location = new System.Drawing.Point(12, 147);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 27;
@@ -165,7 +178,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 133);
+            this.label6.Location = new System.Drawing.Point(12, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 26;
@@ -183,7 +196,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 102);
+            this.label5.Location = new System.Drawing.Point(12, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 24;
@@ -228,12 +241,34 @@
             this.panel1.Size = new System.Drawing.Size(136, 64);
             this.panel1.TabIndex = 39;
             // 
+            // checkPre
+            // 
+            this.checkPre.AutoSize = true;
+            this.checkPre.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkPre.Location = new System.Drawing.Point(111, 196);
+            this.checkPre.Name = "checkPre";
+            this.checkPre.Size = new System.Drawing.Size(15, 14);
+            this.checkPre.TabIndex = 40;
+            this.checkPre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkPre.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Present";
+            // 
             // Find_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(864, 264);
+            this.ClientSize = new System.Drawing.Size(919, 264);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkPre);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnSaveChanges);
@@ -262,11 +297,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridOutput;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
         private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -282,5 +312,13 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.Button btnWrite;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkPre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Present;
     }
 }

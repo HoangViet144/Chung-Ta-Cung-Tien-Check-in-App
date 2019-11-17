@@ -35,6 +35,7 @@
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.bt_Login = new System.Windows.Forms.Button();
             this.bt_Exit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,12 +102,22 @@
             this.bt_Exit.UseVisualStyleBackColor = true;
             this.bt_Exit.Click += new System.EventHandler(this.Bt_Exit_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(452, 250);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Developed by THV and NTN K18 ĐHBK";
+            // 
             // login_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(655, 269);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.bt_Exit);
             this.Controls.Add(this.bt_Login);
             this.Controls.Add(this.tb_Password);
@@ -131,6 +142,7 @@
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.Button bt_Login;
         private System.Windows.Forms.Button bt_Exit;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -47,13 +47,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.gridOutput = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnWrite2File = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnWrite2File = new System.Windows.Forms.Button();
+            this.checkPre = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +90,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 102);
+            this.label5.Location = new System.Drawing.Point(12, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 7;
@@ -96,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 73);
+            this.label4.Location = new System.Drawing.Point(12, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 8;
@@ -105,7 +108,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 130);
+            this.label6.Location = new System.Drawing.Point(12, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 9;
@@ -114,7 +117,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 158);
+            this.label7.Location = new System.Drawing.Point(12, 139);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 10;
@@ -132,7 +135,7 @@
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(111, 99);
+            this.txtStudentName.Location = new System.Drawing.Point(111, 84);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(157, 20);
             this.txtStudentName.TabIndex = 13;
@@ -140,7 +143,7 @@
             // 
             // txtStudentID
             // 
-            this.txtStudentID.Location = new System.Drawing.Point(111, 70);
+            this.txtStudentID.Location = new System.Drawing.Point(111, 58);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(157, 20);
             this.txtStudentID.TabIndex = 12;
@@ -148,7 +151,7 @@
             // 
             // txtStudentEmail
             // 
-            this.txtStudentEmail.Location = new System.Drawing.Point(111, 130);
+            this.txtStudentEmail.Location = new System.Drawing.Point(111, 110);
             this.txtStudentEmail.Name = "txtStudentEmail";
             this.txtStudentEmail.Size = new System.Drawing.Size(157, 20);
             this.txtStudentEmail.TabIndex = 14;
@@ -156,7 +159,7 @@
             // 
             // txtStudentFaculty
             // 
-            this.txtStudentFaculty.Location = new System.Drawing.Point(111, 156);
+            this.txtStudentFaculty.Location = new System.Drawing.Point(111, 136);
             this.txtStudentFaculty.Name = "txtStudentFaculty";
             this.txtStudentFaculty.Size = new System.Drawing.Size(157, 20);
             this.txtStudentFaculty.TabIndex = 15;
@@ -198,7 +201,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 189);
+            this.label9.Location = new System.Drawing.Point(13, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 21;
@@ -206,7 +209,7 @@
             // 
             // txtPhonenumber
             // 
-            this.txtPhonenumber.Location = new System.Drawing.Point(111, 186);
+            this.txtPhonenumber.Location = new System.Drawing.Point(111, 162);
             this.txtPhonenumber.Name = "txtPhonenumber";
             this.txtPhonenumber.Size = new System.Drawing.Size(157, 20);
             this.txtPhonenumber.TabIndex = 22;
@@ -220,30 +223,13 @@
             this.NameStudent,
             this.Email,
             this.Faculty,
-            this.Phonenumber});
+            this.Phonenumber,
+            this.Present});
+            this.gridOutput.Enabled = false;
             this.gridOutput.Location = new System.Drawing.Point(284, 99);
             this.gridOutput.Name = "gridOutput";
-            this.gridOutput.Size = new System.Drawing.Size(568, 150);
+            this.gridOutput.Size = new System.Drawing.Size(623, 150);
             this.gridOutput.TabIndex = 23;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::assignment_oop.Properties.Resources.LogoCTCT;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(646, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 60);
-            this.panel1.TabIndex = 24;
-            // 
-            // btnWrite2File
-            // 
-            this.btnWrite2File.Location = new System.Drawing.Point(26, 214);
-            this.btnWrite2File.Name = "btnWrite2File";
-            this.btnWrite2File.Size = new System.Drawing.Size(103, 35);
-            this.btnWrite2File.TabIndex = 25;
-            this.btnWrite2File.Text = "Write to file";
-            this.btnWrite2File.UseVisualStyleBackColor = true;
-            this.btnWrite2File.Click += new System.EventHandler(this.btnWrite2File_Click);
             // 
             // ID
             // 
@@ -273,12 +259,57 @@
             this.Phonenumber.HeaderText = "Phone No.";
             this.Phonenumber.Name = "Phonenumber";
             // 
+            // Present
+            // 
+            this.Present.HeaderText = "Present";
+            this.Present.Name = "Present";
+            this.Present.Width = 50;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::assignment_oop.Properties.Resources.LogoCTCT;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(646, 14);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 60);
+            this.panel1.TabIndex = 24;
+            // 
+            // btnWrite2File
+            // 
+            this.btnWrite2File.Location = new System.Drawing.Point(26, 214);
+            this.btnWrite2File.Name = "btnWrite2File";
+            this.btnWrite2File.Size = new System.Drawing.Size(103, 35);
+            this.btnWrite2File.TabIndex = 25;
+            this.btnWrite2File.Text = "Write to file";
+            this.btnWrite2File.UseVisualStyleBackColor = true;
+            this.btnWrite2File.Click += new System.EventHandler(this.btnWrite2File_Click);
+            // 
+            // checkPre
+            // 
+            this.checkPre.AutoSize = true;
+            this.checkPre.Location = new System.Drawing.Point(111, 194);
+            this.checkPre.Name = "checkPre";
+            this.checkPre.Size = new System.Drawing.Size(15, 14);
+            this.checkPre.TabIndex = 26;
+            this.checkPre.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 194);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Present";
+            // 
             // Insert_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(856, 272);
+            this.ClientSize = new System.Drawing.Size(912, 272);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.checkPre);
             this.Controls.Add(this.btnWrite2File);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridOutput);
@@ -332,10 +363,13 @@
         private System.Windows.Forms.DataGridView gridOutput;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnWrite2File;
+        private System.Windows.Forms.CheckBox checkPre;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Present;
     }
 }

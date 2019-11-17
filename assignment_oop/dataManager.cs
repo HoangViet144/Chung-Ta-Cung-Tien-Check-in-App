@@ -26,7 +26,7 @@ namespace assignment_oop
             {
                 if (value == "")
                 {
-                    MessageBox.Show("Wrong input!");
+                    MessageBox.Show("subject cannot be empty");
                     return;
                 }
                 subject = value;
@@ -42,7 +42,7 @@ namespace assignment_oop
             {
                 if (value == "")
                 {
-                    MessageBox.Show("Wrong input!");
+                    MessageBox.Show("session cannot be empty");
                     return;
                 }
                 session = value;
@@ -58,7 +58,7 @@ namespace assignment_oop
             {
                 if (value == "")
                 {
-                    MessageBox.Show("Wrong input!");
+                    MessageBox.Show("format date is dd-mm-yyyy");
                     return;
                 }
                 date = value;
@@ -76,7 +76,7 @@ namespace assignment_oop
         {
             if (!item.IsStudent)
             {
-                MessageBox.Show("Wrong information of the student");
+                //MessageBox.Show("Wrong information of the student");
                 return false;
             }
             studentList.Add(item);
@@ -134,13 +134,14 @@ namespace assignment_oop
             student.Mail = stuNeedUpdate.Mail;
             student.Faculty = stuNeedUpdate.Faculty;
             student.PhoneNumber = stuNeedUpdate.PhoneNumber;
+            student.Present = stuNeedUpdate.Present;
         }
 
         private static int counter = 0;
         private static readonly object Instancelock = new object();
         private dataManager()
         {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            /*FolderBrowserDialog dlg = new FolderBrowserDialog();
             while (data_path == "")
             {
                 MessageBox.Show("Please choose where to save your file");
@@ -149,9 +150,9 @@ namespace assignment_oop
                     data_path = dlg.SelectedPath;
                 }
                 if (data_path != "") MessageBox.Show(data_path);
-            }
+            }*/
             counter++;
-            MessageBox.Show(counter.ToString());
+           // MessageBox.Show(counter.ToString());
             studentList=new List<Student>();
         }
         private static dataManager instance = null;
@@ -193,6 +194,16 @@ namespace assignment_oop
 
         public void Write2File()
         {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            while (data_path == "")
+            {
+                MessageBox.Show("Please choose where to save your file");
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    data_path = dlg.SelectedPath;
+                }
+                if (data_path != "") MessageBox.Show(data_path);
+            }
             var excelApp = new Excel.Application();
             excelApp.Visible = true;
             Excel.Workbook workbook = excelApp.Workbooks.Add();
@@ -204,8 +215,10 @@ namespace assignment_oop
             worksheet.Cells[1, "C"] = "Faculty";
             worksheet.Cells[1, "D"] = "Email";
             worksheet.Cells[1, "E"] = "Phone";
+            worksheet.Cells[1, "F"] = "Present";
             int tmp = studentList.Count + 1;
-            worksheet.Range["E2", "E" + tmp].NumberFormat = "@";
+            if(studentList.Count>0)
+                worksheet.Range["E2", "E" + tmp].NumberFormat = "@";
             for (int i=0;i<studentList.Count;++i)
             {
                 worksheet.Cells[i+2, "A"] = studentList[i].Id;
@@ -213,6 +226,7 @@ namespace assignment_oop
                 worksheet.Cells[i+2, "C"] = studentList[i].Faculty;
                 worksheet.Cells[i+2, "D"] = studentList[i].Mail;
                 worksheet.Cells[i + 2, "E"] = studentList[i].PhoneNumber;
+                worksheet.Cells[i + 2, "F"] = studentList[i].Present;
             }
             
             worksheet.Columns[1].AutoFit();
@@ -220,6 +234,7 @@ namespace assignment_oop
             worksheet.Columns[3].AutoFit();
             worksheet.Columns[4].AutoFit();
             worksheet.Columns[5].AutoFit();
+            worksheet.Columns[6].AutoFit();
             workbook.SaveAs(data_path+"\\testtt.xlsx");
             workbook.Close(0);
             excelApp.Quit();

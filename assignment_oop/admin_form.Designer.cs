@@ -32,6 +32,7 @@
             this.btnCreateClass = new System.Windows.Forms.Button();
             this.btnModifyStu = new System.Windows.Forms.Button();
             this.btnImportFile = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Logout
@@ -56,7 +57,7 @@
             // 
             // btnModifyStu
             // 
-            this.btnModifyStu.Location = new System.Drawing.Point(260, 44);
+            this.btnModifyStu.Location = new System.Drawing.Point(167, 44);
             this.btnModifyStu.Name = "btnModifyStu";
             this.btnModifyStu.Size = new System.Drawing.Size(118, 45);
             this.btnModifyStu.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // btnImportFile
             // 
-            this.btnImportFile.Location = new System.Drawing.Point(478, 44);
+            this.btnImportFile.Location = new System.Drawing.Point(301, 44);
             this.btnImportFile.Name = "btnImportFile";
             this.btnImportFile.Size = new System.Drawing.Size(118, 45);
             this.btnImportFile.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.btnImportFile.UseVisualStyleBackColor = true;
             this.btnImportFile.Click += new System.EventHandler(this.btnImportClass_Click);
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(438, 44);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(121, 45);
+            this.btnInsert.TabIndex = 4;
+            this.btnInsert.Text = "Insert student";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
             // admin_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 255);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnImportFile);
             this.Controls.Add(this.btnModifyStu);
             this.Controls.Add(this.btnCreateClass);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnCreateClass;
         private System.Windows.Forms.Button btnModifyStu;
         private System.Windows.Forms.Button btnImportFile;
+        private System.Windows.Forms.Button btnInsert;
     }
 }
