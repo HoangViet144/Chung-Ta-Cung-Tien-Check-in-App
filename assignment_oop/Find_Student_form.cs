@@ -47,6 +47,8 @@ namespace assignment_oop
             txtStudentName.Enabled = true;
             checkPre.Enabled = true;
             txtStudentName.Focus();
+            btnSaveChanges.Enabled = true;
+            btnDel.Enabled = true;
         }
 
         private void Find_Student_form_Load(object sender, EventArgs e)
@@ -57,6 +59,8 @@ namespace assignment_oop
             txtStudentFaculty.Enabled = false;
             txtStudentName.Enabled = false;
             checkPre.Enabled = false;
+            btnDel.Enabled = false;
+            btnSaveChanges.Enabled = false;
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
@@ -74,6 +78,8 @@ namespace assignment_oop
             txtStudentName.Enabled = false;
             checkPre.Enabled = false;
             txtStudentID.Focus();
+            btnSaveChanges.Enabled = false;
+            btnDel.Enabled = false;
         }
 
         private void txtStudentID_TextChanged(object sender, EventArgs e)
@@ -128,6 +134,25 @@ namespace assignment_oop
         private void btnWrite_Click(object sender, EventArgs e)
         {
             dataMng.Write2File();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            dataMng.delete(txtStudentID.Text);
+            txtPhonenumber.Clear();
+            txtStudentEmail.Clear();
+            txtStudentFaculty.Clear();
+            txtStudentID.Clear();
+            txtStudentName.Clear();
+            updategridOutput();
+            txtPhonenumber.Enabled = false;
+            txtStudentEmail.Enabled = false;
+            txtStudentFaculty.Enabled = false;
+            txtStudentName.Enabled = false;
+            checkPre.Enabled = false;
+            txtStudentID.Focus();
+            btnDel.Enabled = false;
+            btnSaveChanges.Enabled = false;
         }
     }
 }

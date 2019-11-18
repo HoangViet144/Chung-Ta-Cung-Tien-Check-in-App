@@ -52,6 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkPre = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +215,7 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(111, 229);
+            this.btnSaveChanges.Location = new System.Drawing.Point(16, 229);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(110, 23);
             this.btnSaveChanges.TabIndex = 37;
@@ -261,12 +262,23 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "Present";
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(141, 229);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(127, 23);
+            this.btnDel.TabIndex = 42;
+            this.btnDel.Text = "Delete student";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // Find_Student_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(919, 264);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkPre);
             this.Controls.Add(this.panel1);
@@ -320,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Present;
+        private System.Windows.Forms.Button btnDel;
     }
 }
