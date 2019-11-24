@@ -42,6 +42,10 @@ namespace assignment_oop
         }
         private void btnCreateClass_Click(object sender, EventArgs e)
         {
+            Create();
+        }
+        private void Create()
+        { 
             dataManager dataMng = dataManager.GetInstance;
             Create_Class_Form cls = new Create_Class_Form();
             cls.Show();
@@ -49,7 +53,10 @@ namespace assignment_oop
 
         private void btnImportClass_Click(object sender, EventArgs e)
         {
-            
+            Import();
+        }
+        private void Import()
+        { 
             string data_path = "";
             OpenFileDialog dlg = new OpenFileDialog
             {
@@ -123,6 +130,10 @@ namespace assignment_oop
 
         private void btnModifyStu_Click(object sender, EventArgs e)
         {
+            Modify();
+        }
+        private void Modify()
+        { 
             if (dataMng.Subject == null || dataMng.Session == null || dataMng.Date == null)
             {
                 MessageBox.Show("Some information of class is missing. Please fill again the information of class");
@@ -141,6 +152,10 @@ namespace assignment_oop
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            Insert();
+        }
+        private void Insert()
+        { 
             if (dataMng.Subject == null || dataMng.Session == null || dataMng.Date == null)
             {
                 MessageBox.Show("Some information of class is missing. Please fill again the information of class");
@@ -155,6 +170,31 @@ namespace assignment_oop
             }
             Insert_Student_form inStu = new Insert_Student_form();
             inStu.Show();
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Import();
+        }
+
+        private void createClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Insert();
+        }
+
+        private void modifyStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modify();
+        }
+
+        private void createClassToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Create();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

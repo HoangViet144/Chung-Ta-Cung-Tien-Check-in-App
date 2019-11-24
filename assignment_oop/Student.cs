@@ -27,7 +27,7 @@ namespace assignment_oop
                 if (value=="" || value.Length!=7)
                 {
                     isStudent = false;
-                    MessageBox.Show("Id must have 7 digits");
+                    //MessageBox.Show("Id must have 7 digits");
                     return;
                 }
                 for(int i=0;i<7;++i)
@@ -35,7 +35,7 @@ namespace assignment_oop
                     if(value[i]<'0' || value[i]>'9')
                     {
                         isStudent = false;
-                        MessageBox.Show("Id must have 7 digits");
+                        //MessageBox.Show("Id must have 7 digits");
                         return;
                     }
                 }
@@ -75,7 +75,7 @@ namespace assignment_oop
                 if (value == "")
                 {
                     isStudent = false;
-                    MessageBox.Show("Name cannot be empty");
+                    //MessageBox.Show("Name cannot be empty");
                     return;
                 }
                 name = value;
@@ -103,7 +103,7 @@ namespace assignment_oop
                 if (value =="" || value.Length != 10)
                 {
                     isStudent = false;
-                    MessageBox.Show("Phone number must have 10 digits");
+                    //MessageBox.Show("Phone number must have 10 digits");
                     return;
                 }
                 for (int i = 0; i < 9; i++)
@@ -111,7 +111,7 @@ namespace assignment_oop
                     if (Char.IsNumber(value[i]) == false)
                     {
                         isStudent = false;
-                        MessageBox.Show("Phone number must have 10 digits");
+                        //MessageBox.Show("Phone number must have 10 digits");
                         return;
                     }
                 }
@@ -129,14 +129,14 @@ namespace assignment_oop
                 if (value.Length < 13)
                 {
                     isStudent = false;
-                    MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
+                    //MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
                     return;
                 }
                 string tmp=value.Substring(value.Length-13);
                 if(tmp=="" || tmp!="@hcmut.edu.vn")
                 {
                     isStudent = false;
-                    MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
+                    //MessageBox.Show("Wrong email, only accept @hcmut.edu.vn");
                     return;
                 }
                 mail = value;
@@ -153,7 +153,7 @@ namespace assignment_oop
                 if(value=="")
                 {
                     isStudent = false;
-                    MessageBox.Show("Faculty cannot be empty");
+                    //MessageBox.Show("Faculty cannot be empty");
                     return;
                 }
                 faculty = value;

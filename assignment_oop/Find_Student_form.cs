@@ -12,6 +12,7 @@ namespace assignment_oop
 {
     public partial class Find_Student_form : Form
     {
+        ErrorProvider error1 = new ErrorProvider();
         dataManager dataMng = dataManager.GetInstance;
         public Find_Student_form()
         {
@@ -65,6 +66,11 @@ namespace assignment_oop
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            if (!ValidateName() || !ValidatePhonenumber() || !ValidateEmail() || !ValidateFaculty())
+            {
+                MessageBox.Show("Please fill valid information");
+                return;
+            }
             dataMng.update(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text,checkPre.Checked));
             txtPhonenumber.Clear();
             txtStudentEmail.Clear();
@@ -153,6 +159,100 @@ namespace assignment_oop
             txtStudentID.Focus();
             btnDel.Enabled = false;
             btnSaveChanges.Enabled = false;
+        }
+        private bool ValidatePhonenumber()
+        {
+            if (txtPhonenumber.Text == "" || txtPhonenumber.Text.Length != 10)
+            {
+                error1.SetError(txtPhonenumber, "Phone number must have 10 digits");
+                return false;
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                if (Char.IsNumber(txtPhonenumber.Text[i]) == false)
+                {
+                    error1.SetError(txtPhonenumber, "Phone number must have 10 digits");
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool ValidateFaculty()
+        {
+
+            if (txtStudentFaculty.Text == "")
+            {
+                error1.SetError(txtStudentFaculty, "Faculty is required");
+                return false;
+            }
+            return true;
+        }
+        private bool ValidateEmail()
+        {
+            if (txtStudentEmail.Text.Length < 13)
+            {
+                error1.SetError(txtStudentEmail, "Wrong email, only accept @hcmut.edu.vn");
+                return false;
+            }
+            string tmp = txtStudentEmail.Text.Substring(txtStudentEmail.Text.Length - 13);
+            if (tmp == "" || tmp != "@hcmut.edu.vn")
+            {
+                error1.SetError(txtStudentEmail, "Wrong email, only accept @hcmut.edu.vn");
+                return false;
+            }
+            return true;
+        }
+        private bool ValidateName()
+        {
+            bool status = true;
+            if (txtStudentName.Text == "")
+            {
+                error1.SetError(txtStudentName, "Name is required");
+                status = false;
+            }
+            return status;
+        }
+        private bool ValidateID()
+        {
+            if (txtStudentID.Text == "" || txtStudentID.Text.Length != 7)
+            {
+                error1.SetError(txtStudentID, "ID must have 7 digits");
+                return false;
+            }
+            for (int i = 0; i < 7; ++i)
+            {
+                if (txtStudentID.Text[i] < '0' || txtStudentID.Text[i] > '9')
+                {
+                    error1.SetError(txtStudentID, "ID must have 7 digits");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void txtStudentID_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateID();
+        }
+
+        private void txtStudentName_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateName();
+        }
+
+        private void txtStudentEmail_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateEmail();
+        }
+
+        private void txtStudentFaculty_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateFaculty();
+        }
+
+        private void txtPhonenumber_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatePhonenumber();
         }
     }
 }

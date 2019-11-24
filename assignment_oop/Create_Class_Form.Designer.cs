@@ -114,6 +114,8 @@
             // 
             // Create_Class_Form
             // 
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 221);
@@ -124,6 +126,7 @@
             this.Controls.Add(this.cbSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Create_Class_Form";
             this.Text = "Create_Class_Form";
             this.ResumeLayout(false);

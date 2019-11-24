@@ -140,6 +140,7 @@
             this.txtStudentName.Size = new System.Drawing.Size(157, 20);
             this.txtStudentName.TabIndex = 13;
             this.txtStudentName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentName_KeyDown);
+            this.txtStudentName.Validating += new System.ComponentModel.CancelEventHandler(this.txtStudentName_Validating);
             // 
             // txtStudentID
             // 
@@ -148,6 +149,7 @@
             this.txtStudentID.Size = new System.Drawing.Size(157, 20);
             this.txtStudentID.TabIndex = 12;
             this.txtStudentID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentID_KeyDown);
+            this.txtStudentID.Validating += new System.ComponentModel.CancelEventHandler(this.txtStudentID_Validating);
             // 
             // txtStudentEmail
             // 
@@ -156,6 +158,7 @@
             this.txtStudentEmail.Size = new System.Drawing.Size(157, 20);
             this.txtStudentEmail.TabIndex = 14;
             this.txtStudentEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentEmail_KeyDown);
+            this.txtStudentEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtStudentEmail_Validating);
             // 
             // txtStudentFaculty
             // 
@@ -164,6 +167,7 @@
             this.txtStudentFaculty.Size = new System.Drawing.Size(157, 20);
             this.txtStudentFaculty.TabIndex = 15;
             this.txtStudentFaculty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentFaculty_KeyDown);
+            this.txtStudentFaculty.Validating += new System.ComponentModel.CancelEventHandler(this.txtStudentFaculty_Validating);
             // 
             // tbSubject
             // 
@@ -214,6 +218,7 @@
             this.txtPhonenumber.Size = new System.Drawing.Size(157, 20);
             this.txtPhonenumber.TabIndex = 22;
             this.txtPhonenumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhonenumber_KeyDown);
+            this.txtPhonenumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhonenumber_Validating);
             // 
             // gridOutput
             // 
@@ -304,6 +309,8 @@
             // 
             // Insert_Student_form
             // 
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -331,6 +338,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Insert_Student_form";
             this.Text = "Insert_Student";
             this.Load += new System.EventHandler(this.Insert_Student_Load);
