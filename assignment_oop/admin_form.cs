@@ -11,10 +11,13 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.VisualBasic;
+using System.Threading;
+using System.Threading.Tasks;
 namespace assignment_oop
 {
     public partial class admin_form : Form
     {
+        string data_path = "";
         dataManager dataMng = dataManager.GetInstance;
         public admin_form()
         {
@@ -53,11 +56,7 @@ namespace assignment_oop
 
         private void btnImportClass_Click(object sender, EventArgs e)
         {
-            Import();
-        }
-        private void Import()
-        { 
-            string data_path = "";
+            
             OpenFileDialog dlg = new OpenFileDialog
             {
                 Title = "Browse Excel File",
@@ -67,9 +66,8 @@ namespace assignment_oop
 
                 DefaultExt = "xlsx",
                 Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
-               
+
             };
-            // FolderBrowserDialog dlg = new FolderBrowserDialog();
             MessageBox.Show("Please choose where to open your file");
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -80,6 +78,15 @@ namespace assignment_oop
                 MessageBox.Show("Can't open file");
                 return;
             }
+            Action myaction = () =>
+            {
+                Import(data_path);
+            };
+            Task task = new Task(myaction);
+            task.Start();
+        }
+        private void Import(string data_path)
+        { 
             Excel.Application app = new Excel.Application();
             Excel.Workbook workbookImport = app.Workbooks.Open(data_path);
             Excel.Worksheet worksheetImport = workbookImport.Sheets[1];
@@ -174,7 +181,7 @@ namespace assignment_oop
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Import();
+            Import(data_path);
         }
 
         private void createClassToolStripMenuItem_Click(object sender, EventArgs e)

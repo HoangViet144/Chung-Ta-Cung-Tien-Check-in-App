@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Threading;
+using System.Threading.Tasks;
 namespace assignment_oop
 {
     //Double Check Locking Singleton
@@ -191,7 +193,6 @@ namespace assignment_oop
         {
             return studentList;
         }
-
         public void Write2File()
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
@@ -204,6 +205,15 @@ namespace assignment_oop
                 }
                 if (data_path != "") MessageBox.Show(data_path);
             }
+            Action myaction = () =>
+              {
+                  WriteToFile(data_path);
+              };
+            Task task = new Task(myaction);
+            task.Start();
+        }
+        private void WriteToFile(string data_path)
+        {
             var excelApp = new Excel.Application();
             excelApp.Visible = true;
             Excel.Workbook workbook = excelApp.Workbooks.Add();

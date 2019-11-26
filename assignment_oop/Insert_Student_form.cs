@@ -148,6 +148,7 @@ namespace assignment_oop
                     return false;
                 }
             }
+            error1.SetError(txtPhonenumber, "");
             return true;
         }
         private bool ValidateFaculty()
@@ -158,6 +159,7 @@ namespace assignment_oop
                 error1.SetError(txtStudentFaculty, "Faculty is required");
                 return false;
             }
+            error1.SetError(txtStudentFaculty, "");
             return true;
         }
         private bool ValidateEmail()
@@ -173,17 +175,18 @@ namespace assignment_oop
                 error1.SetError(txtStudentEmail, "Wrong email, only accept @hcmut.edu.vn");
                 return false;
             }
+            error1.SetError(txtStudentEmail, "");
             return true;
         }
         private bool ValidateName()
         {
-            bool status = true;
             if (txtStudentName.Text == "")
             {
                 error1.SetError(txtStudentName, "Name is required");
-                status = false;
+                return false;
             }
-            return status;
+            error1.SetError(txtStudentName, "");
+            return true;
         }
         private bool ValidateID()
         {
@@ -200,6 +203,7 @@ namespace assignment_oop
                     return false;
                 }
             }
+            error1.SetError(txtStudentID, "");
             return true;
         }
     }
