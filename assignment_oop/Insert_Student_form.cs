@@ -13,22 +13,11 @@ namespace assignment_oop
     public partial class Insert_Student_form : Form
     {
         ErrorProvider error1 = new ErrorProvider();
-        dataManager dataMng = dataManager.GetInstance;
+        DataManager dataMng = DataManager.GetInstance;
         public Insert_Student_form()
         {
             InitializeComponent();
         }
-        private void updategridOutput()
-        {
-            gridOutput.Rows.Clear();
-            List<Student> stuList = dataMng.getStudentList();
-            for (int i = 0; i < stuList.Count; ++i)
-            {
-                DataGridViewRow tmp = new DataGridViewRow();
-                gridOutput.Rows.Add(stuList[i].Id, stuList[i].Name,  stuList[i].Mail, stuList[i].Faculty, stuList[i].PhoneNumber,stuList[i].Present);
-            }
-        }
-
         private void Insert_Student_Load(object sender, EventArgs e)
         {
             string a = "", b = "", c = "";
@@ -37,7 +26,7 @@ namespace assignment_oop
             tbSession.Text = b;
             tbDate.Text = c;
             txtStudentID.Focus();
-            updategridOutput();
+            gridOutput.DataSource = dataMng.getStudentList();
         }
 
         private void btnInsertStudent_Click(object sender, EventArgs e)
@@ -53,7 +42,6 @@ namespace assignment_oop
                 return;
             }
             bool check=dataMng.insert(new Student(txtStudentID.Text, txtStudentName.Text, txtPhonenumber.Text, txtStudentEmail.Text, txtStudentFaculty.Text,checkPre.Checked));
-            updategridOutput();
             if(check)
             {
                 txtPhonenumber.Clear();

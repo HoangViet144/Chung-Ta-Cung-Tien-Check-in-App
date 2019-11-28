@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,17 @@ using System.Threading.Tasks;
 namespace assignment_oop
 {
     //Double Check Locking Singleton
-    public sealed class dataManager
+    public sealed class DataManager
     {
-        string data_path = "";
+        string dataPath = "";
         string date;
         string subject;
         string session;
-        List<Student> studentList;
+        BindingList<Student> students;
+
         public string Subject
         {
-            get
-            {
-                return subject;
-            }
+            get { return subject; }
             set
             {
                 if (value == "")
@@ -34,12 +33,10 @@ namespace assignment_oop
                 subject = value;
             }
         }
+
         public string Session
         {
-            get
-            {
-                return session;
-            }
+            get { return session; }
             set
             {
                 if (value == "")
@@ -50,12 +47,10 @@ namespace assignment_oop
                 session = value;
             }
         }
+
         public string Date
         {
-            get
-            {
-                return date;
-            }
+            get { return date; }
             set
             {
                 if (value == "")
@@ -66,82 +61,15 @@ namespace assignment_oop
                 date = value;
             }
         }
-        public List<Student> StudentList
-        {
-            get
-            {
-                return studentList;
-            }
 
-        }
-        public bool insert(Student item)
+        public BindingList<Student> StudentList
         {
-            if (!item.IsStudent)
-            {
-                //MessageBox.Show("Wrong information of the student");
-                return false;
-            }
-            studentList.Add(item);
-            return true;
-        }
-        public void update(Student student)
-        {
-            /*for(int i=0; i < studentList.Count; i++)
-            {
-                if (studentList[i].Id == id) return studentList[i];
-            }
-
-            foreach(IStudent student in studentList)
-            {
-                if(student.Id==id)
-            }*/
-            Student curStudent = studentList.Find(x => (x.Id == student.Id));
-            if (curStudent == null)
-            {
-                MessageBox.Show("Can't find student");
-                return;
-            }
-            Update1(curStudent, student);
-            /*var student1 = new Student()
-            {
-                Id = 12,
-                Name = "1122"
-            };*/
-        }
-        public Student search(string stuId)
-        {
-            Student curStudent = studentList.Find(x => (x.Id == stuId));
-            if (curStudent == null)
-            {
-                //MessageBox.Show("Can't find student");
-                return null;
-            }
-            return curStudent;
-        }
-        public void delete(string stuId)
-        {
-            Student curStudent = studentList.Find(x => (x.Id == stuId));
-            if (curStudent == null)
-            {
-                //MessageBox.Show("Can't find student");
-                return;
-            }
-            studentList.Remove(curStudent);
-        }
-        
-        private void Update1(Student student, Student stuNeedUpdate)
-        {
-            student.Name = stuNeedUpdate.Name;
-            student.Id = stuNeedUpdate.Id;
-            student.Mail = stuNeedUpdate.Mail;
-            student.Faculty = stuNeedUpdate.Faculty;
-            student.PhoneNumber = stuNeedUpdate.PhoneNumber;
-            student.Present = stuNeedUpdate.Present;
+            get { return students; }
         }
 
         private static int counter = 0;
         private static readonly object Instancelock = new object();
-        private dataManager()
+        private DataManager()
         {
             /*FolderBrowserDialog dlg = new FolderBrowserDialog();
             while (data_path == "")
@@ -154,12 +82,15 @@ namespace assignment_oop
                 if (data_path != "") MessageBox.Show(data_path);
             }*/
             counter++;
-           // MessageBox.Show(counter.ToString());
-            studentList=new List<Student>();
+            students = new BindingList<Student>();
+            students.AllowNew = true;
+            students.AllowRemove = true;
+            students.AllowEdit = true;
+            students.RaiseListChangedEvents = true;
         }
-        private static dataManager instance = null;
+        private static DataManager instance = null;
 
-        public static dataManager GetInstance
+        public static DataManager GetInstance
         {
             get
             {
@@ -169,13 +100,57 @@ namespace assignment_oop
                     {
                         if (instance == null)
                         {
-                            instance = new dataManager();
+                            instance = new DataManager();
                         }
                     }
                 }
                 return instance;
             }
         }
+        public bool insert(Student item)
+        {
+            students.Add(item);
+            return true;
+        }
+        public void update(Student student)
+        {
+            /*for(int i=0; i < studentList.Count; i++)
+            {
+                if (studentList[i].Id == id) return studentList[i];
+            }
+            foreach(Student student in students)
+            {
+                if(student.Id==id)
+            }*/
+            Student curStudent = students.SingleOrDefault(x => (x.Id == student.Id));
+            if (curStudent == null)
+            {
+                MessageBox.Show("Can't find student");
+                return;
+            }
+            Update1(curStudent, student);
+        }
+
+        private void Update1(Student student, Student stuNeedUpdate)
+        {
+            int index = students.IndexOf(student);
+            students.Remove(student);
+            students.Insert(index, stuNeedUpdate);
+        }
+
+        public Student search(string stuId)
+        {
+            return students.SingleOrDefault(x => (x.Id == stuId));
+        }
+
+        public void delete(string stuId)
+        {
+            Student curStudent = students.SingleOrDefault(x => (x.Id == stuId));
+            if (curStudent == null) return;
+            students.Remove(curStudent);
+        }
+        
+        
         public void setClassSessionDate(string Subject, string Session, string Date)
         {
             subject = Subject;
@@ -189,36 +164,49 @@ namespace assignment_oop
             Date = date;
         }
 
-        public List<Student> getStudentList()
+        public BindingList<Student> getStudentList()
         {
-            return studentList;
+            return students;
         }
         public void Write2File()
         {
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            while (data_path == "")
+            /*FolderBrowserDialog dlg = new FolderBrowserDialog();
+            while (dataPath == "")
             {
                 MessageBox.Show("Please choose where to save your file");
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    data_path = dlg.SelectedPath;
+                    dataPath = dlg.SelectedPath;
                 }
-                if (data_path != "") MessageBox.Show(data_path);
+                if (dataPath != "") MessageBox.Show(dataPath);
+            }*/
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel files(*.xlsx)| *.xlsx | All files(*.*) | *.* ";
+            saveFileDialog1.Title = "Save File";
+            saveFileDialog1.ShowDialog();
+            saveFileDialog1.CheckFileExists = true;
+            saveFileDialog1.CheckPathExists = true;
+            saveFileDialog1.DefaultExt = "xlsx";
+            if (saveFileDialog1.FileName=="")
+            {
+                MessageBox.Show("Please choose a name");
+                return;
             }
+            dataPath = saveFileDialog1.FileName;
             Action myaction = () =>
               {
-                  WriteToFile(data_path);
+                  WriteToFile(dataPath);
               };
             Task task = new Task(myaction);
             task.Start();
         }
-        private void WriteToFile(string data_path)
+        private void WriteToFile(string dataPath)
         {
             var excelApp = new Excel.Application();
             excelApp.Visible = true;
             Excel.Workbook workbook = excelApp.Workbooks.Add();
             Excel.Worksheet worksheet = workbook.Worksheets[1];
-            worksheet.Name = subject+","+session+","+date;
+            worksheet.Name = subject + "," + session + "," + date;
 
             worksheet.Cells[1, "A"] = "ID";
             worksheet.Cells[1, "B"] = "Name";
@@ -226,91 +214,28 @@ namespace assignment_oop
             worksheet.Cells[1, "D"] = "Email";
             worksheet.Cells[1, "E"] = "Phone";
             worksheet.Cells[1, "F"] = "Present";
-            int tmp = studentList.Count + 1;
-            if(studentList.Count>0)
+            int tmp = students.Count + 1;
+            if (students.Count > 0)
                 worksheet.Range["E2", "E" + tmp].NumberFormat = "@";
-            for (int i=0;i<studentList.Count;++i)
+            for (int i = 0; i < students.Count; ++i)
             {
-                worksheet.Cells[i+2, "A"] = studentList[i].Id;
-                worksheet.Cells[i+2, "B"] = studentList[i].Name;
-                worksheet.Cells[i+2, "C"] = studentList[i].Faculty;
-                worksheet.Cells[i+2, "D"] = studentList[i].Mail;
-                worksheet.Cells[i + 2, "E"] = studentList[i].PhoneNumber;
-                worksheet.Cells[i + 2, "F"] = studentList[i].Present;
+                worksheet.Cells[i + 2, "A"] = students[i].Id;
+                worksheet.Cells[i + 2, "B"] = students[i].Name;
+                worksheet.Cells[i + 2, "C"] = students[i].Faculty;
+                worksheet.Cells[i + 2, "D"] = students[i].Mail;
+                worksheet.Cells[i + 2, "E"] = students[i].PhoneNumber;
+                worksheet.Cells[i + 2, "F"] = students[i].Present;
             }
-            
+
             worksheet.Columns[1].AutoFit();
             worksheet.Columns[2].AutoFit();
             worksheet.Columns[3].AutoFit();
             worksheet.Columns[4].AutoFit();
             worksheet.Columns[5].AutoFit();
             worksheet.Columns[6].AutoFit();
-            workbook.SaveAs(data_path+"\\testtt.xlsx");
+            workbook.SaveAs(dataPath);
             workbook.Close(0);
             excelApp.Quit();
         }
-
-        /*
-        classRoom clsRm;
-        private static int counter = 0;
-        private static readonly object Instancelock = new object();
-        private dataManager()
-        {
-            string data_path = "";
-
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
-            while (data_path == "")
-            {
-                MessageBox.Show("Please choose where to save your file");
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    data_path = dlg.SelectedPath;
-                }
-                if (data_path != "") MessageBox.Show(data_path);
-            }
-            counter++;
-            MessageBox.Show(counter.ToString());
-            clsRm = new classRoom();
-        }
-        private static dataManager instance = null;
-
-        public static dataManager GetInstance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    lock (Instancelock)
-                    {
-                        if (instance == null)
-                        {
-                            instance = new dataManager();
-                        }
-                    }
-                }
-                return instance;
-            }
-        }
-        public void PrintDetails(string message)
-        {
-            Console.WriteLine(message);
-        }
-        public void setClassSectionDate(string subject, string section,string date)
-        {
-            clsRm.Subject = subject;
-            clsRm.Section = section;
-            clsRm.Date = date;
-        }
-        public void getClassSectionDate(ref string subject, ref string section,ref string date)
-        {
-            subject = clsRm.Subject;
-            section = clsRm.Section;
-            date = clsRm.Date;
-        }
-        public List<Student> getStudentList()
-        {
-            return clsRm.StudentList;
-        }
-        */
     }
 }

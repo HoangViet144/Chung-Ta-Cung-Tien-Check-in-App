@@ -70,7 +70,7 @@
     <Compile Include="admin_form.Designer.cs">
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="dataManager.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Create_Class_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoCTCT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-pic-10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_5d5476c7a0fcd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

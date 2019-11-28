@@ -35,6 +35,12 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewStudentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCreateClass = new System.Windows.Forms.Button();
@@ -47,9 +53,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -69,14 +80,14 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // createClassToolStripMenuItem1
             // 
             this.createClassToolStripMenuItem1.Name = "createClassToolStripMenuItem1";
-            this.createClassToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.createClassToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.createClassToolStripMenuItem1.Text = "Create class";
             this.createClassToolStripMenuItem1.Click += new System.EventHandler(this.createClassToolStripMenuItem1_Click);
             // 
@@ -92,16 +103,61 @@
             // createClassToolStripMenuItem
             // 
             this.createClassToolStripMenuItem.Name = "createClassToolStripMenuItem";
-            this.createClassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createClassToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.createClassToolStripMenuItem.Text = "Insert student";
             this.createClassToolStripMenuItem.Click += new System.EventHandler(this.createClassToolStripMenuItem_Click);
             // 
             // modifyStudentToolStripMenuItem
             // 
             this.modifyStudentToolStripMenuItem.Name = "modifyStudentToolStripMenuItem";
-            this.modifyStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifyStudentToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.modifyStudentToolStripMenuItem.Text = "Modify student";
             this.modifyStudentToolStripMenuItem.Click += new System.EventHandler(this.modifyStudentToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewStudentListToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // viewStudentListToolStripMenuItem
+            // 
+            this.viewStudentListToolStripMenuItem.Name = "viewStudentListToolStripMenuItem";
+            this.viewStudentListToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.viewStudentListToolStripMenuItem.Text = "View student list";
+            this.viewStudentListToolStripMenuItem.Click += new System.EventHandler(this.viewStudentListToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem1});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
+            this.helpToolStripMenuItem1.Text = "Help";
+            this.helpToolStripMenuItem1.Click += new System.EventHandler(this.helpToolStripMenuItem1_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutUsToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // aboutUsToolStripMenuItem
+            // 
+            this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutUsToolStripMenuItem.Text = "About us";
+            this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -130,7 +186,7 @@
             // 
             // btnImportClass
             // 
-            this.btnImportClass.Location = new System.Drawing.Point(138, 45);
+            this.btnImportClass.Location = new System.Drawing.Point(12, 89);
             this.btnImportClass.Name = "btnImportClass";
             this.btnImportClass.Size = new System.Drawing.Size(99, 38);
             this.btnImportClass.TabIndex = 7;
@@ -140,7 +196,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(270, 45);
+            this.btnInsert.Location = new System.Drawing.Point(12, 133);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(99, 38);
             this.btnInsert.TabIndex = 8;
@@ -150,7 +206,7 @@
             // 
             // btnModifyStu
             // 
-            this.btnModifyStu.Location = new System.Drawing.Point(401, 45);
+            this.btnModifyStu.Location = new System.Drawing.Point(12, 177);
             this.btnModifyStu.Name = "btnModifyStu";
             this.btnModifyStu.Size = new System.Drawing.Size(99, 38);
             this.btnModifyStu.TabIndex = 9;
@@ -160,7 +216,7 @@
             // 
             // Bt_Logout
             // 
-            this.Bt_Logout.Location = new System.Drawing.Point(531, 45);
+            this.Bt_Logout.Location = new System.Drawing.Point(558, 45);
             this.Bt_Logout.Name = "Bt_Logout";
             this.Bt_Logout.Size = new System.Drawing.Size(99, 38);
             this.Bt_Logout.TabIndex = 10;
@@ -172,6 +228,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::assignment_oop.Properties.Resources.img_5d5476c7a0fcd;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(669, 255);
             this.Controls.Add(this.Bt_Logout);
             this.Controls.Add(this.btnModifyStu);
@@ -179,12 +238,13 @@
             this.Controls.Add(this.btnImportClass);
             this.Controls.Add(this.btnCreateClass);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "admin_form";
-            this.Text = "admin_form";
+            this.Text = "Student Management - Version 1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frame_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -208,5 +268,11 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnModifyStu;
         private System.Windows.Forms.Button Bt_Logout;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewStudentListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutUsToolStripMenuItem;
     }
 }

@@ -39,14 +39,12 @@ namespace assignment_oop
             {
                 if(tb_Username.Text=="admin" && tb_Password.Text=="admin")
                 {
-                    MessageBox.Show("Login Successful!");
                     this.Hide();
                     
                     fm.Show();
                 }
                 else if(tb_Username.Text=="user1" && tb_Password.Text=="user1")
                 {
-                    MessageBox.Show("Login Successful!");
                     this.Hide();
                     
                     fm.Show();

@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.gridOutput = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Present = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,54 +53,11 @@
             // gridOutput
             // 
             this.gridOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridOutput.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.NameStudent,
-            this.Faculty,
-            this.Email,
-            this.Phonenumber,
-            this.Present});
             this.gridOutput.Enabled = false;
             this.gridOutput.Location = new System.Drawing.Point(284, 102);
             this.gridOutput.Name = "gridOutput";
             this.gridOutput.Size = new System.Drawing.Size(624, 150);
             this.gridOutput.TabIndex = 35;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 80;
-            // 
-            // NameStudent
-            // 
-            this.NameStudent.HeaderText = "Name";
-            this.NameStudent.Name = "NameStudent";
-            // 
-            // Faculty
-            // 
-            this.Faculty.HeaderText = "Faculty";
-            this.Faculty.Name = "Faculty";
-            this.Faculty.Width = 50;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email (@hcmut.edu.vn)";
-            this.Email.Name = "Email";
-            this.Email.Width = 200;
-            // 
-            // Phonenumber
-            // 
-            this.Phonenumber.HeaderText = "Phone No.";
-            this.Phonenumber.Name = "Phonenumber";
-            // 
-            // Present
-            // 
-            this.Present.HeaderText = "Present";
-            this.Present.Name = "Present";
-            this.Present.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Present.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Present.Width = 50;
             // 
             // txtPhonenumber
             // 
@@ -279,8 +230,6 @@
             // 
             // Find_Student_form
             // 
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -305,6 +254,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Find_Student_form";
             this.Text = "Find_Student_form";
             this.Load += new System.EventHandler(this.Find_Student_form_Load);
@@ -334,12 +285,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkPre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phonenumber;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Present;
         private System.Windows.Forms.Button btnDel;
     }
 }
