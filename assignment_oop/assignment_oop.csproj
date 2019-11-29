@@ -97,6 +97,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="user_form.cs">
       <SubType>Form</SubType>
@@ -121,14 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="user_form.resx">
       <DependentUpon>user_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,13 +150,19 @@
     <None Include="Resources\LogoCTCT.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background-pic-10.jpg" />
+    <None Include="Resources\c.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\11.jpg" />
+    <None Include="Resources\ab.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img_5d5476c7a0fcd.png" />
+    <None Include="Resources\logout-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\518-5189122_logout-transparent-logout-button-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

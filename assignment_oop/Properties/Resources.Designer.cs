@@ -63,9 +63,9 @@ namespace assignment_oop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _11 {
+        internal static System.Drawing.Bitmap _518_5189122_logout_transparent_logout_button_icon {
             get {
-                object obj = ResourceManager.GetObject("11", resourceCulture);
+                object obj = ResourceManager.GetObject("518-5189122_logout-transparent-logout-button-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace assignment_oop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_pic_10 {
+        internal static System.Drawing.Bitmap ab {
             get {
-                object obj = ResourceManager.GetObject("background-pic-10", resourceCulture);
+                object obj = ResourceManager.GetObject("ab", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace assignment_oop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_5d5476c7a0fcd {
+        internal static System.Drawing.Bitmap c {
             get {
-                object obj = ResourceManager.GetObject("img_5d5476c7a0fcd", resourceCulture);
+                object obj = ResourceManager.GetObject("c", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +96,26 @@ namespace assignment_oop.Properties {
         internal static System.Drawing.Bitmap LogoCTCT {
             get {
                 object obj = ResourceManager.GetObject("LogoCTCT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_512 {
+            get {
+                object obj = ResourceManager.GetObject("logout-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống__2_ {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

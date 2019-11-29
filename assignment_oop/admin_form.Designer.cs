@@ -48,7 +48,11 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnModifyStu = new System.Windows.Forms.Button();
             this.Bt_Logout = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -186,7 +190,7 @@
             // 
             // btnImportClass
             // 
-            this.btnImportClass.Location = new System.Drawing.Point(12, 89);
+            this.btnImportClass.Location = new System.Drawing.Point(140, 59);
             this.btnImportClass.Name = "btnImportClass";
             this.btnImportClass.Size = new System.Drawing.Size(99, 38);
             this.btnImportClass.TabIndex = 7;
@@ -196,7 +200,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(12, 133);
+            this.btnInsert.Location = new System.Drawing.Point(245, 76);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(99, 38);
             this.btnInsert.TabIndex = 8;
@@ -206,7 +210,7 @@
             // 
             // btnModifyStu
             // 
-            this.btnModifyStu.Location = new System.Drawing.Point(12, 177);
+            this.btnModifyStu.Location = new System.Drawing.Point(376, 76);
             this.btnModifyStu.Name = "btnModifyStu";
             this.btnModifyStu.Size = new System.Drawing.Size(99, 38);
             this.btnModifyStu.TabIndex = 9;
@@ -216,23 +220,53 @@
             // 
             // Bt_Logout
             // 
-            this.Bt_Logout.Location = new System.Drawing.Point(558, 45);
+            this.Bt_Logout.AccessibleDescription = "";
+            this.Bt_Logout.AccessibleName = "";
+            this.Bt_Logout.BackColor = System.Drawing.Color.Transparent;
+            this.Bt_Logout.BackgroundImage = global::assignment_oop.Properties.Resources._518_5189122_logout_transparent_logout_button_icon;
+            this.Bt_Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bt_Logout.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Bt_Logout.Location = new System.Drawing.Point(448, 10);
             this.Bt_Logout.Name = "Bt_Logout";
-            this.Bt_Logout.Size = new System.Drawing.Size(99, 38);
+            this.Bt_Logout.Size = new System.Drawing.Size(42, 32);
             this.Bt_Logout.TabIndex = 10;
-            this.Bt_Logout.Text = "Log out";
-            this.Bt_Logout.UseVisualStyleBackColor = true;
+            this.Bt_Logout.Tag = "";
+            this.Bt_Logout.UseVisualStyleBackColor = false;
             this.Bt_Logout.Click += new System.EventHandler(this.Bt_Logout_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.Bt_Logout);
+            this.groupBox1.Location = new System.Drawing.Point(83, 168);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(508, 67);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Option";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(445, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Log out";
             // 
             // admin_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::assignment_oop.Properties.Resources.img_5d5476c7a0fcd;
+            this.BackgroundImage = global::assignment_oop.Properties.Resources.c;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(669, 255);
-            this.Controls.Add(this.Bt_Logout);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnModifyStu);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnImportClass);
@@ -248,6 +282,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frame_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,12 +303,15 @@
         private System.Windows.Forms.Button btnImportClass;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnModifyStu;
-        private System.Windows.Forms.Button Bt_Logout;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewStudentListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutUsToolStripMenuItem;
+        private System.Windows.Forms.Button Bt_Logout;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
