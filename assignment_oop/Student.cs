@@ -36,19 +36,6 @@ namespace assignment_oop
             }
         }
 
-        public bool Present { get; set; }
-
-        public string PhoneNumber
-        {
-            get { return phoneNumber; }
-            set
-            {
-                if (value == "" || value.Length != 10) return;
-                if (!int.TryParse(value, out int tmp)) return;
-                phoneNumber = value;
-            }
-        }
-
         public string Mail
         {
             get { return mail; }
@@ -58,6 +45,18 @@ namespace assignment_oop
                 string tmp = value.Substring(value.Length - 13);
                 if (tmp == "" || tmp != "@hcmut.edu.vn") return;
                 mail = value;
+            }
+        }
+        
+
+        public string PhoneNumber
+        {
+            get { return phoneNumber; }
+            set
+            {
+                if (value == "" || value.Length != 10) return;
+                if (!int.TryParse(value, out int tmp)) return;
+                phoneNumber = value;
             }
         }
 
@@ -71,6 +70,7 @@ namespace assignment_oop
             }
         }
 
+        public bool Present { get; set; }
         public Student() { }
 
         public Student(Student curStu)
