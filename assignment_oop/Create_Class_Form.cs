@@ -19,18 +19,21 @@ namespace assignment_oop
 
         private void btnCreateAndInsert_Click(object sender, EventArgs e)
         {
-            if(cbSubject.Text==""||cbSession.Text=="")
+            createClass();
+        }
+        private void createClass()
+        {
+            if (cbSubject.Text == "" || cbSession.Text == "")
             {
                 MessageBox.Show("Please fill all the information");
                 return;
             }
             this.Close();
             DataManager dataMng = DataManager.GetInstance;
-            dataMng.setClassSessionDate(cbSubject.SelectedItem.ToString(), cbSession.SelectedItem.ToString(),datClassDate.Value.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
+            dataMng.setClassSessionDate(cbSubject.SelectedItem.ToString(), cbSession.SelectedItem.ToString(), datClassDate.Value.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture));
             Insert_Student_form inStufm = new Insert_Student_form();
             inStufm.Show();
         }
-
         private void cbSubject_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == '\r')
