@@ -71,16 +71,6 @@ namespace assignment_oop
         private static readonly object Instancelock = new object();
         private DataManager()
         {
-            /*FolderBrowserDialog dlg = new FolderBrowserDialog();
-            while (data_path == "")
-            {
-                MessageBox.Show("Please choose where to save your file");
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    data_path = dlg.SelectedPath;
-                }
-                if (data_path != "") MessageBox.Show(data_path);
-            }*/
             counter++;
             students = new BindingList<Student>();
             students.AllowNew = true;
@@ -170,16 +160,6 @@ namespace assignment_oop
         }
         public void Write2File()
         {
-            /*FolderBrowserDialog dlg = new FolderBrowserDialog();
-            while (dataPath == "")
-            {
-                MessageBox.Show("Please choose where to save your file");
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    dataPath = dlg.SelectedPath;
-                }
-                if (dataPath != "") MessageBox.Show(dataPath);
-            }*/
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel files(*.xlsx)| *.xlsx | All files(*.*) | *.* ";
             saveFileDialog1.Title = "Save File";
