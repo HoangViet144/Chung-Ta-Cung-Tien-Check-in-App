@@ -149,15 +149,5 @@ namespace assignment_oop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tải_xuống__2_ {
-            get {
-                object obj = ResourceManager.GetObject("tải xuống (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
